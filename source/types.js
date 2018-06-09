@@ -6,7 +6,7 @@
 
 const screenOrientation = { landscape: 'landscape', portrait: 'portrait' };
 
-const breakpoints = {
+const defaultBreakpoints = {
   xs: 0,
   sm: 576,
   md: 768,
@@ -74,7 +74,7 @@ const initialLogicalOperator = {
 
 export {
   screenOrientation,
-  breakpoints,
+  defaultBreakpoints,
   mediaTypes,
   mediaFeature,
   logicalOperator,

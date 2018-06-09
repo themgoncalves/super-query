@@ -4,7 +4,12 @@
  * @version 0.1.0
  */
 
-import SuperQuery from './index';
+import SuperQuery, { configureBreakpoints } from './index';
+import { defaultBreakpoints } from './types';
+
+beforeEach(() => {
+  configureBreakpoints(defaultBreakpoints);
+});
 
 describe('SuperQuery', () => {
   it('should query without media type `all` -> @media (max-width: 100px)', () => {
@@ -53,6 +58,16 @@ describe('SuperQuery', () => {
       .deviceAspectRatio('16/10')
       .ToString();
     expect(result).toEqual('@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10)');
+  });
+
+  it('should set custom breakpoints', () => {
+    const customBreakpoints = {
+      extraLarge: 1234,
+    };
+
+    configureBreakpoints(customBreakpoints);
+    const result = SuperQuery().minWidth().extraLarge().ToString();
+    expect(result).toEqual('@media (min-width: 77.125em)');
   });
 
   it('should render css', () => {

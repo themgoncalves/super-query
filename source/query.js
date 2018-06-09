@@ -8,12 +8,16 @@ import { css } from 'styled-components';
 
 import {
   screenOrientation,
-  breakpoints,
+  defaultBreakpoints,
   mediaTypes,
   mediaFeature,
   logicalOperator,
   initialLogicalOperator,
 } from './types';
+
+let mediaBreakpoints = defaultBreakpoints;
+
+const configureBreakpoints = customBreakpoints => { mediaBreakpoints = customBreakpoints };
 
 /* eslint-disable no-use-before-define */
 const mediaQuery = () => {
@@ -30,8 +34,8 @@ const mediaQuery = () => {
 
   // breakpoint selector
   // e.g. mediaBreakpoints{...}.md()
-  const breakpointsSelector = Object.keys(breakpoints).reduce((accumulator, label) => {
-    const emUnit = breakpoints[label] / 16;
+  const breakpointsSelector = Object.keys(mediaBreakpoints).reduce((accumulator, label) => {
+    const emUnit = mediaBreakpoints[label] / 16;
     accumulator[label] = () => { // eslint-disable-line no-param-reassign
       query += `${emUnit}em) `;
       return ({
@@ -114,3 +118,6 @@ const mediaQuery = () => {
 };
 /* eslint-enable no-use-before-define */
 export default mediaQuery;
+export {
+  configureBreakpoints,
+}

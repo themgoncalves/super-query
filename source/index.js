@@ -4,6 +4,7 @@
  * @version 0.1.0
  */
 
-import query from './query';
+import query, { configureBreakpoints } from './query';
 
 export default query;
+export { configureBreakpoints };
