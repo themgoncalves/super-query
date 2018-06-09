@@ -1,0 +1,18 @@
+---
+  env:
+    browser: true
+    node: true
+    jest: true
+  extends:
+    - airbnb
+  settings:
+    import/resolver:
+      alias: true
+  parser: babel-eslint
+  parserOptions:
+    sourceType: module
+    allowImportExportEverywhere: false
+    codeFrame: false
+  globals:
+    window: false
+    document: false
