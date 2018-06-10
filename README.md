@@ -185,7 +185,7 @@ media_feature: width | min-width | max-width
 | height | `.height()` | `.height('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | min-height | `.minHeight()` | `.minHeight('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | max-height | `.maxHeight()` | `.maxHeight('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| device-width | `.deviceWidth()` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| device-width | `.deviceWidth()` | `.deviceWidth('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | min-device-width | `.minDeviceWidth()` | `.minDeviceWidth('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | max-device-width | `.maxDeviceWidth()` | `.maxDeviceWidth('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | device-height | `.height()` | `.height('320px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
@@ -195,7 +195,7 @@ media_feature: width | min-width | max-width
 | min-aspect-ratio | `.minAspectRatio()` | `.minAspectRatio('1/1')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | max-aspect-ratio | `.maxAspectRatio()` | `.maxAspectRatio('1/1')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | device-aspect-ratio | `.deviceAspectRatio()` | `.deviceAspectRatio('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-device-aspect-ratio | `.minDeviceAspectRatio()`  `.minDeviceAspectRatio('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-device-aspect-ratio | `.minDeviceAspectRatio()` |  `.minDeviceAspectRatio('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | max-device-aspect-ratio | `.maxDeviceAspectRatio()` | `.maxDeviceAspectRatio('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | color | `.color()` | `n/a` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | min-color | `.minColor()` | `.minColor('4')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
@@ -230,8 +230,6 @@ media_feature: width | min-width | max-width
 | not |`.not()` | `SuperQuery()` | `Media Type` | ✖ |
 | only |`.only()` | `SuperQuery()` | `` | ✖ |
 
-
-
 ### Render CSS
 
 Simply call the `css` function as the last iteration and pass the `css syntax` throw `ES6 Tagged Template Literals`:
@@ -244,10 +242,73 @@ SuperQuery().minWidth().md().css`
 `
 ```
 
+
+### How to create custom breakpoints?
+
+One of the coolest features we have on SuperQuery is the possibility to overwrite our default breakpoints into your own custom.
+
+Here is how to do:
+
+```javascript
+
+// first we need to import the `configureBreakpoints` function
+import { configureBreakpoints } from '@themgoncalves/super-query';
+
+// here is an example of a custom breakpoint
+const customBreakpoints = {
+  extraSmall: 360;
+  small: 640;
+  medium: 960,
+  large: 1024,
+  extraLarge: 1200,
+  superExtraLarge: 1600,
+};
+
+// then just import your custom breakpoints into the `configureBreakpoints` and you are ready to go!
+configureBreakpoints(customBreakpoints);
+
+```
+
+After that, you should be able to use it in the same conditions as the default ones.
+
+
+```javascript
+
+// first we need to import the `configureBreakpoints` function
+import { configureBreakpoints } from '@themgoncalves/super-query';
+
+// here is an example of a custom breakpoint
+const customBreakpoints = {
+  extraSmall: 360;
+  small: 640;
+  medium: 960,
+  large: 1024,
+  extraLarge: 1200,
+  superExtraLarge: 1600,
+};
+
+// then just import your custom breakpoints into the `configureBreakpoints` and you are ready to go!
+configureBreakpoints(customBreakpoints);
+```
+
+Then you should be able to use it in the same conditions as the default breakpoints.
+
+See a demonstration of the above code:
+
+```javascript
+SuperQuery().minWidth().superExtraLarge().css`
+    content: 'You just called your own custom breakpoints!'
+`
+```
+
+
 <br />
 
 ## Release History
 
+* 0.1.1
+    * Fixed typo in the `ToString` method used for tests
+    * Minor fixes and improvement in the project's documentation
 * 0.1.0
     * First release
     * NEW: Added `configureBreakpoints()` to set custom breakpoints
