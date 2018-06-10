@@ -126,7 +126,7 @@ media_feature: width | min-width | max-width
 
 ### Built-in Breakpoints
 
-| Type | How to Use | Size | Comes before of | Comes after of | Can set `css` after?  |
+| Type | How to Use | Size | Comes after of | Following options | Can set `css` after?  |
 ---|---|---|---|---|---|
 | xs | `.xs()` | 0px | `Media Feature` | `Logical Operator` | ✔ |
 | sm | `.sm()` | 576px | `Media Feature` | `Logical Operator` | ✔ |
@@ -136,7 +136,7 @@ media_feature: width | min-width | max-width
 
 ### Media Type
 
-| Type | How to Use | Comes after of | Comes before of | Can set `css` after?  |
+| Type | How to Use | Comes after of | Following options | Can set `css` after?  |
 |---|---|---|---|---|
 | all | `.all()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
 | aural | `.aural()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
@@ -151,7 +151,7 @@ media_feature: width | min-width | max-width
 
 ### Media Feature
 
-| Type | How to Use | Optional Argument Example | Comes after of | Comes before of | Can set `css` after?  |
+| Type | How to Use | Optional Argument Example | Comes after of | Following options | Can set `css` after?  |
 |---|---|---|---|---|---|
 | width |`.width()` | `.width('100px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 | min-width | `.minWidth()` | `.minWidth('100px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
@@ -189,7 +189,7 @@ media_feature: width | min-width | max-width
 
 ### Screen Orientation
 
-| Type | How to Use | Comes after of | Comes before of | Can set `css` after?  |
+| Type | How to Use | Comes after of | Following options | Can set `css` after?  |
 |---|---|---|---|---|
 | landscape |`.landscape()` | `Logical Operator` | `Logical Operator` | ✔ |
 | portrait |`.portrait()` | `Logical Operator` | `Logical Operator` | ✔ |
@@ -197,7 +197,7 @@ media_feature: width | min-width | max-width
 
 ### Logical Operator
 
-| Type | How to Use | Comes after of | Comes before of | Can set `css` after?  |
+| Type | How to Use | Comes after of | Following options | Can set `css` after?  |
 |---|---|---|---|---|
 | and |`.and()` |  `Media Feature`, `Screen Orientation`, `Breakpoints` | `Media Type`, `Media Feature`, `Screen Orientation` | ✖ |
 | or |`.or()` | `Media Feature`, `Screen Orientation`, `Breakpoints` | `Media Type`, `Media Feature`, `Screen Orientation` | ✖ |
