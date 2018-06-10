@@ -76,7 +76,7 @@
     ],
     "moduleDirectories": [
       "node_modules",
-      "lib"
+      "source"
     ],
     "collectCoverage": true,
     "collectCoverageFrom": [
