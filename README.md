@@ -126,7 +126,7 @@ media_feature: width | min-width | max-width
 
 ### Built-in Breakpoints
 
-| Type | How to Use | Size | Comes after of | Comes before of | Can set `css` after?  |
+| Type | How to Use | Size | Comes before of | Comes after of | Can set `css` after?  |
 ---|---|---|---|---|---|
 | xs | `.xs()` | 0px | `Media Feature` | `Logical Operator` | ✔ |
 | sm | `.sm()` | 576px | `Media Feature` | `Logical Operator` | ✔ |
@@ -136,7 +136,7 @@ media_feature: width | min-width | max-width
 
 ### Media Type
 
-| Type | How to Use | Comes before of | Comes after of | Can set `css` after?  |
+| Type | How to Use | Comes after of | Comes before of | Can set `css` after?  |
 |---|---|---|---|---|
 | all | `.all()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
 | aural | `.aural()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
