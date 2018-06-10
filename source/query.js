@@ -100,7 +100,7 @@ const mediaQuery = () => {
     .reduce((accumulator, label) => {
       accumulator[label] = () => { // eslint-disable-line no-param-reassign
         query += `${initialLogicalOperator[label]} `;
-        return ({ ...mediaTypeSelector, ...{ oString: ToString } });
+        return ({ ...mediaTypeSelector, ...{ ToString: ToString } });
       };
       return accumulator;
     }, {});
