@@ -24,9 +24,10 @@ let mediaBreakpoints = defaultBreakpoints;
 /**
  * configureBreakpoints
  * @function
- * @param {Object} customBreakpoints - The custom breakpoints object to overwrite the default condition.
+ * @param {Object} customBreakpoints - The custom breakpoints
+ * object to overwrite the default condition.
  */
-const configureBreakpoints = customBreakpoints => { mediaBreakpoints = customBreakpoints };
+const configureBreakpoints = (customBreakpoints) => { mediaBreakpoints = customBreakpoints; };
 /**
  * mediaQuery
  * @function
@@ -100,7 +101,7 @@ const mediaQuery = () => {
     .reduce((accumulator, label) => {
       accumulator[label] = () => { // eslint-disable-line no-param-reassign
         query += `${initialLogicalOperator[label]} `;
-        return ({ ...mediaTypeSelector, ...{ ToString: ToString } });
+        return ({ ...mediaTypeSelector, ...{ ToString } });
       };
       return accumulator;
     }, {});
@@ -187,6 +188,5 @@ const mediaQuery = () => {
 *  Export { configureBreakpoints }
 */
 export default mediaQuery;
-export {
-  configureBreakpoints,
-}
+
+export { configureBreakpoints };

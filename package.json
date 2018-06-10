@@ -61,8 +61,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "run-p --race lint",
-      "pre-push": "run-p --race test"
+      "pre-commit": "npm lint",
+      "pre-push": "npm test"
     }
   },
   "jest": {
