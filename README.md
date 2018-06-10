@@ -93,6 +93,32 @@ Note that it **should not** be in the devDependencies.
 
 <br />
 
+## How to use
+
+First we need to import the package into our component;
+
+```javascript
+import SuperQuery from '@themgoncalves/super-query';
+```
+
+Then, we are ready to mix it with `styled-component`:
+
+```javascript
+const Title = styled.h1`
+  color: #666;
+  font-size: 16px;
+  ${SuperQuery().minWidth().lg().css`
+    font-size: 20px;
+  `};
+  ${SuperQuery().minWidth().lg().and().landscape().css`
+    font-size: 26px;
+  `};
+`;
+```
+
+See how easy to implement it is?
+
+
 ## Documentation
 
 This package follows the `css3 media query` rule, [click here to check it out](https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries).
