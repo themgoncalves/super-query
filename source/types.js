@@ -1,11 +1,21 @@
 /**
- * themgoncalves
+ * SuperQuery
  * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
  * @version 0.1.0
  */
 
+/**
+ * Screen Orientation
+ * Required to track orientation change on mobile devices
+ */
 const screenOrientation = { landscape: 'landscape', portrait: 'portrait' };
 
+
+/**
+ * Default Breakpoints
+ * Removed from the great work of `Bootstrap 4`
+ * @see {@link https://getbootstrap.com/docs/4.0/layout/grid/}
+ */
 const defaultBreakpoints = {
   xs: 0,
   sm: 576,
@@ -14,6 +24,10 @@ const defaultBreakpoints = {
   xl: 1200,
 };
 
+/**
+ * Media Types
+ * Target all, one or more specific device
+ */
 const mediaTypes = {
   all: 'all',
   aural: 'aural',
@@ -27,6 +41,11 @@ const mediaTypes = {
   embossed: 'embossed',
 };
 
+/**
+ * Media Feature
+ * Used to set <Expression> syntax
+ * expression: ( <media_feature> [: <value>]? )
+ */
 const mediaFeature = {
   width: 'width',
   minWidth: 'min-width',
@@ -62,16 +81,27 @@ const mediaFeature = {
   grid: 'grid',
 };
 
+/**
+ * Logical Operator
+ * Used to join <expression> in the <media_query>
+ *  media_query: <expression> [ and <expression> ]*
+ */
 const logicalOperator = {
   and: 'and',
   or: ',',
 };
 
+/**
+ * Initial Logical Operator
+ * Used in the first condition of the <media_query>
+ * media_query: [[only | not]? <media_type> [ and <expression> ]*]
+ */
 const initialLogicalOperator = {
   not: 'not',
   only: 'only',
 };
 
+// Exports the objects
 export {
   screenOrientation,
   defaultBreakpoints,

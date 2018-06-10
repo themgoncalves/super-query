@@ -1,5 +1,5 @@
 /**
- * themgoncalves
+ * SuperQuery
  * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
  * @version 0.1.0
  */
@@ -15,25 +15,54 @@ import {
   initialLogicalOperator,
 } from './types';
 
+/**
+ * Set the initial media breakpoints
+* @global
+*/
 let mediaBreakpoints = defaultBreakpoints;
 
+/**
+ * configureBreakpoints
+ * @function
+ * @param {Object} customBreakpoints - The custom breakpoints object to overwrite the default condition.
+ */
 const configureBreakpoints = customBreakpoints => { mediaBreakpoints = customBreakpoints };
-
+/**
+ * mediaQuery
+ * @function
+ * @returns {Object} - The conditions to use and set the media query.
+ */
 /* eslint-disable no-use-before-define */
 const mediaQuery = () => {
-  // media query string
+  // Media query string
+  // It's used to mount the `media query` statement after every object call
   let query = '@media ';
 
+  /**
+   * Returns the `media query` set
+   * @function
+   * @returns {String} - The media query string.
+   */
   const ToString = () => String(query).replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '').replace(/\s+/g, ' '); // eslint-disable-line no-unused-vars
 
+  /**
+   * Render CSS
+   * @function
+   * @params {String} - ES6 Tagged Template Literals containing your CSS syntax
+   * @see {@link https://www.styled-components.com/docs/advanced#tagged-template-literals}
+   */
   const renderCss = (...args) => css`
     ${query.toString().trim()} {
       ${css(...args)}
     }
   `;
 
-  // breakpoint selector
-  // e.g. mediaBreakpoints{...}.md()
+  /**
+   * Breakpoint Selector
+   * @example
+   * SuperQuery().minWidth().md()
+   * @returns {Object} - With Proper Selectors that match current condition
+   */
   const breakpointsSelector = Object.keys(mediaBreakpoints).reduce((accumulator, label) => {
     const emUnit = mediaBreakpoints[label] / 16;
     accumulator[label] = () => { // eslint-disable-line no-param-reassign
@@ -46,8 +75,13 @@ const mediaQuery = () => {
     return accumulator;
   }, {});
 
-  // screen orientation selector
-  // e.g. mediaBreakpoints{...}.portrait()
+
+  /**
+   * Screen Orientation Selector
+   * @example
+   * SuperQuery().all().and().portrait()
+   * @returns {Object} - With Proper Selectors that match current condition
+   */
   const screenOrientationSelector = Object.keys(screenOrientation).reduce((accumulator, label) => {
     accumulator[label] = () => { // eslint-disable-line no-param-reassign
       query += `(orientation: ${screenOrientation[label]}) `;
@@ -56,8 +90,12 @@ const mediaQuery = () => {
     return accumulator;
   }, {});
 
-  // initial logical operator selector
-  // e.g. mediaBreakpoints{...}.only()
+  /**
+   * Initial Logical Operator Selector
+   * @example
+   * SuperQuery().only()
+   * @returns {Object} - With Proper Selectors that match current condition
+   */
   const initialLogicalOperatorSelector = Object.keys(initialLogicalOperator)
     .reduce((accumulator, label) => {
       accumulator[label] = () => { // eslint-disable-line no-param-reassign
@@ -67,8 +105,13 @@ const mediaQuery = () => {
       return accumulator;
     }, {});
 
-  // logical operator selector
-  // e.g. mediaBreakpoints{...}.and()
+
+  /**
+   * Logical Operator Selector
+   * @example
+   * SuperQuery().screen().and()
+   * @returns {Object} - With Proper Selectors that match current condition
+   */
   const logicalOperatorSelector = Object.keys(logicalOperator).reduce((accumulator, label) => {
     accumulator[label] = () => { // eslint-disable-line no-param-reassign
       query = (logicalOperator[label] === logicalOperator.or ?
@@ -85,8 +128,12 @@ const mediaQuery = () => {
     return accumulator;
   }, {});
 
-  // media type selector
-  // e.g. mediaBreakpoints{...}.all()
+  /**
+   * Media Type Selector
+   * @example
+   * SuperQuery().print()
+   * @returns {Object} - With Proper Selectors that match current condition
+   */
   const mediaTypeSelector = Object.keys(mediaTypes).reduce((accumulator, label) => {
     accumulator[label] = () => { // eslint-disable-line no-param-reassign
       query += `${mediaTypes[label]} `;
@@ -95,8 +142,15 @@ const mediaQuery = () => {
     return accumulator;
   }, {});
 
-  // media feature selector
-  // e.g. mediaBreakpoints{...}.minWidth()
+
+  /**
+   * Media Feature Selector
+   * @example
+   * SuperQuery().width()
+   * SuperQuery().width('120px')
+   * @params {String} - Optional value to the Media Feature
+   * @returns {Object} - With Proper Selectors that match current condition
+   */
   const mediaFeatureSelector = Object.keys(mediaFeature).reduce((accumulator, label) => {
     accumulator[label] = (value = '') => { // eslint-disable-line no-param-reassign
       query += `(${mediaFeature[label]}: ${!value ? '' : value + ') '}`; // eslint-disable-line prefer-template
@@ -109,6 +163,16 @@ const mediaQuery = () => {
     return accumulator;
   }, {});
 
+  /**
+   * SuperQuery
+   * Initial Selector Object
+   * @example
+   * SuperQuery().all()
+   * SuperQuery().only()
+   * SuperQuery().print()
+   * SuperQuery().width()
+   * @returns {Object} - With Proper Selectors that match current condition
+   */
   return ({
     ...initialLogicalOperatorSelector,
     ...mediaTypeSelector,
@@ -117,6 +181,11 @@ const mediaQuery = () => {
   });
 };
 /* eslint-enable no-use-before-define */
+
+/**
+*  Exports default the mediaQuery
+*  Export { configureBreakpoints }
+*/
 export default mediaQuery;
 export {
   configureBreakpoints,

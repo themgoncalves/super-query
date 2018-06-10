@@ -1,5 +1,5 @@
 /**
- * themgoncalves
+ * SuperQuery
  * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
  * @version 0.1.0
  */
