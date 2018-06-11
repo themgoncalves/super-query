@@ -47,7 +47,7 @@ SuperQuery().minWidth().sm().and().maxWidth().lg().css`
 Of even how about control the `screen orientation` over `mobile` devices ?
 
 ```javascript
-SuperQuery().maxWidth().md().landscape().css`
+SuperQuery().maxWidth().md().and().landscape().css`
     content: 'Yep! Your device is on landscape mode!'
 `
 ```
