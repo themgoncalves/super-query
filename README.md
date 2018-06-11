@@ -8,7 +8,7 @@
 [![Awesome][awesome-image]][awesome-url]
 [![GitHub All Releases][releases-image]][releases-url]
 [![Build Status][travis-ci-image]][travis-ci-url]
-[![Coverage Status][coverage-image]][coverage-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 ## Description
 
@@ -354,5 +354,5 @@ Distributed under the MIT license. [Click here](/LICENSE) for more information.
 [wiki]: https://github.com/yourname/yourproject/wiki
 [travis-ci-image]: https://travis-ci.org/themgoncalves/super-query.svg?branch=master
 [travis-ci-url]: https://travis-ci.org/themgoncalves/super-query
-[coverage-image]: https://coveralls.io/repos/github/themgoncalves/super-query/badge.svg?branch=master
-[coverage-url]: https://coveralls.io/github/themgoncalves/super-query?branch=master
+[coveralls-image]: https://coveralls.io/repos/github/themgoncalves/super-query/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/themgoncalves/super-query?branch=master
