@@ -7,6 +7,7 @@
 [![GitHub forks][forks-image]][forks-url]
 [![Awesome][awesome-image]][awesome-url]
 [![GitHub All Releases][releases-image]][releases-url]
+[![Build Status][travis-ci-image]][travis-ci-url]
 
 ## Description
 
@@ -228,7 +229,7 @@ media_feature: width | min-width | max-width
 | and |`.and()` |  `Media Feature`, `Screen Orientation`, `Breakpoints` | `Media Type`, `Media Feature`, `Screen Orientation` | ✖ |
 | or |`.or()` | `Media Feature`, `Screen Orientation`, `Breakpoints` | `Media Type`, `Media Feature`, `Screen Orientation` | ✖ |
 | not |`.not()` | `SuperQuery()` | `Media Type` | ✖ |
-| only |`.only()` | `SuperQuery()` | `` | ✖ |
+| only |`.only()` | `SuperQuery()` | `Media Type` | ✖ |
 
 ### Render CSS
 
@@ -350,3 +351,5 @@ Distributed under the MIT license. [Click here](/LICENSE) for more information.
 [releases-url]: https://github.com/themgoncalves/react-redux-async-starter-kit
 [awesome-url]: https://github.com/themgoncalves/super-query
 [wiki]: https://github.com/yourname/yourproject/wiki
+[travis-ci-image]: https://travis-ci.org/themgoncalves/super-query.svg?branch=master
+[travis-ci-url]: https://travis-ci.org/themgoncalves/super-query
