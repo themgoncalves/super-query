@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>🎠 SuperQuery Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.lumen.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">🎠 SuperQuery</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-Breakpoints.html">Breakpoints</a></li><li><a href="module-SuperQuery.html">SuperQuery</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="global.html#defaultBreakpoints">defaultBreakpoints</a></li><li><a href="global.html#initialLogicalOperator">initialLogicalOperator</a></li><li><a href="global.html#logicalOperator">logicalOperator</a></li><li><a href="global.html#mediaFeature">mediaFeature</a></li><li><a href="global.html#mediaTypes">mediaTypes</a></li><li><a href="global.html#screenOrientation">screenOrientation</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>🎠 Super-Query</h1><blockquote>
+<p>A super <code>media-query</code> for styled-component. Intuitive and easy of use.</p>
+</blockquote>
+<p><a href="https://travis-ci.org/themgoncalves/super-query"><img src="https://travis-ci.org/themgoncalves/super-query.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/themgoncalves/super-query?branch=master"><img src="https://coveralls.io/repos/github/themgoncalves/super-query/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://github.com/themgoncalves/react-redux-async-starter-kit"><img src="https://img.shields.io/github/downloads/atom/atom/total.svg" alt="GitHub All Releases"></a>
+<a href="https://github.com/themgoncalves/super-query/stargazers"><img src="https://img.shields.io/github/stars/themgoncalves/super-query.svg" alt="GitHub stars"></a>
+<a href="https://snyk.io/test/github/themgoncalves/super-query"><img src="https://snyk.io/test/github/themgoncalves/super-query/badge.svg" alt="Known Vulnerabilities"></a>
+<a href="https://github.com/themgoncalves/super-query/issues"><img src="https://img.shields.io/github/issues/themgoncalves/super-query.svg" alt="GitHub issues"></a>
+<a href="https://www.npmjs.com/package/@themgoncalves/super-query"><img src="https://img.shields.io/npm/v/@themgoncalves/super-query.svg" alt="NPM"></a>
+<a href="https://github.com/themgoncalves/super-query"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"></a></p>
+<h2>Description</h2><p>We all know that <a href="https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries"><code>Media Query</code></a> is a very important part of your application; with that you can set <strong>any kind of responsiveness</strong> and <strong>device control</strong>.</p>
+<p>Most of the developers only use simple <code>media feature</code> as part of the <code>media query</code> syntax, and for that simple use case, there's a <a href="https://github.com/styled-components/styled-components/blob/master/docs/tips-and-tricks.md#media-templates">bunch of good approach for your <code>styled-component</code></a> based application.</p>
+<blockquote>
+<p><strong>Media Feature examples</strong>:
+<em>width | min-width | max-width | height | min-height | max-height</em></p>
+</blockquote>
+<p><br /></p>
+<p>But how about control over the <code>screen orientation</code>, <code>aspect-ratio</code>, <code>resolution</code> and <code>tv</code> devices? Or even a interpolation between?</p>
+<p>For those developers who need more control over the <code>styled-component</code> based application, we created the <strong><code>SuperQuery</code></strong> in order to provide a <strong>full powerful and simple control over your media query</strong>.</p>
+<p><br /></p>
+<h2>Want a simple code demonstration?</h2><p>How about create a <code>media query</code> that handles screen widths between <code>360px</code> and <code>1024px</code> ?</p>
+<pre class="prettyprint source lang-javascript"><code>SuperQuery().minWidth('360px').and().maxWidth('1024px').css`
+    content: 'this is awesome!'
+`</code></pre><p>Cool, right? But it's even cooler to use our <code>built-in</code> breakpoints, let's rewrite it!</p>
+<pre class="prettyprint source lang-javascript"><code>SuperQuery().minWidth().sm().and().maxWidth().lg().css`
+    content: 'this is even more awesome!'
+`</code></pre><p>Of even how about control the <code>screen orientation</code> over <code>mobile</code> devices ?</p>
+<pre class="prettyprint source lang-javascript"><code>SuperQuery().maxWidth().md().and().landscape().css`
+    content: 'Yep! Your device is on landscape mode!'
+`</code></pre><p>Want a more <code>complex query</code> ?</p>
+<pre class="prettyprint source lang-javascript"><code>SuperQuery()
+      .screen()
+      .and()
+      .deviceAspectRatio('16/9')
+      .or()
+      .screen()
+      .and()
+      .deviceAspectRatio('16/10')
+      .css`
+    content: 'this is awesome!'
+`</code></pre><p>Yeah! Now you know how <code>simple</code> and <code>powerful</code> is <code>SuperQuery</code>!</p>
+<h2>Installation</h2><p>Since we have experience some issues with NPM along the time, we strongly recomment the use of <a href="https://yarnpkg.com/en/">YARN Package Manage</a>;</p>
+<p><strong>Download our NPM Package</strong></p>
+<p>For YARN users:</p>
+<pre class="prettyprint source lang-sh"><code>yarn add @themgoncalves/super-query</code></pre><p>For NPM users:</p>
+<pre class="prettyprint source lang-sh"><code>npm install @themgoncalves/super-query</code></pre><p>Note that it <strong>should not</strong> be in the devDependencies.</p>
+<p><br /></p>
+<h2>How to use</h2><p>First we need to import the package into our component;</p>
+<pre class="prettyprint source lang-javascript"><code>import SuperQuery from '@themgoncalves/super-query';</code></pre><p>Then, we are ready to mix it with <code>styled-component</code>:</p>
+<pre class="prettyprint source lang-javascript"><code>const Title = styled.h1`
+  color: #666;
+  font-size: 16px;
+  ${SuperQuery().minWidth().lg().css`
+    font-size: 20px;
+  `};
+  ${SuperQuery().minWidth().lg().and().landscape().css`
+    font-size: 26px;
+  `};
+`;</code></pre><p>See how easy to implement it is?</p>
+<h2>Documentation</h2><p>This package follows the <code>css3 media query</code> rule, <a href="https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries">click here to check it out</a>.</p>
+<h3>The Media Query Syntax</h3><p>A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.</p>
+<pre class="prettyprint source lang-regex"><code>media_query: [[only | not]? &lt;media_type> [ and &lt;expression> ]*] |
+             &lt;expression> [ and &lt;expression> ]*
+
+expression: ( &lt;media_feature> [: &lt;value>]? )
+
+media_type: all | aural | braille | handheld | print |
+  projection | screen | tty | tv | embossed
+
+media_feature: width | min-width | max-width
+  | height | min-height | max-height
+  | device-width | min-device-width | max-device-width
+  | device-height | min-device-height | max-device-height
+  | aspect-ratio | min-aspect-ratio | max-aspect-ratio
+  | device-aspect-ratio | min-device-aspect-ratio | max-device-aspect-ratio
+  | color | min-color | max-color
+  | color-index | min-color-index | max-color-index
+  | monochrome | min-monochrome | max-monochrome
+  | resolution | min-resolution | max-resolution
+  | scan | grid</code></pre><h3>Built-in Breakpoints</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>Type</th>
+<th>How to Use</th>
+<th>Size</th>
+<th>Comes after of</th>
+<th>Following options</th>
+<th>Can set <code>css</code> after?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>xs</td>
+<td><code>.xs()</code></td>
+<td>0px</td>
+<td><code>Media Feature</code></td>
+<td><code>Logical Operator</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>sm</td>
+<td><code>.sm()</code></td>
+<td>576px</td>
+<td><code>Media Feature</code></td>
+<td><code>Logical Operator</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>md</td>
+<td><code>.md()</code></td>
+<td>768px</td>
+<td><code>Media Feature</code></td>
+<td><code>Logical Operator</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>lg</td>
+<td><code>.lg()</code></td>
+<td>992px</td>
+<td><code>Media Feature</code></td>
+<td><code>Logical Operator</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>xl</td>
+<td><code>.xl()</code></td>
+<td>1200px</td>
+<td><code>Media Feature</code></td>
+<td><code>Logical Operator</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Media Type</h3><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>How to Use</th>
+<th>Comes after of</th>
+<th>Following options</th>
+<th>Can set <code>css</code> after?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td><code>.all()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>aural</td>
+<td><code>.aural()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>braille</td>
+<td><code>.braille()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>handheld</td>
+<td><code>.handheld()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>print</td>
+<td><code>.print()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>projection</td>
+<td><code>.projection()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>screen</td>
+<td><code>.screen()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>tty</td>
+<td><code>.tty()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>tv</td>
+<td><code>.tv()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>embossed</td>
+<td><code>.embossed()</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code></td>
+<td><code>Logical Operator</code>, <code>Media Feature</code></td>
+<td>✖</td>
+</tr>
+</tbody>
+</table>
+<h3>Media Feature</h3><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>How to Use</th>
+<th>Optional Argument Example</th>
+<th>Comes after of</th>
+<th>Following options</th>
+<th>Can set <code>css</code> after?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td><code>.width()</code></td>
+<td><code>.width('100px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-width</td>
+<td><code>.minWidth()</code></td>
+<td><code>.minWidth('100px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-width</td>
+<td><code>.maxWidth()</code></td>
+<td><code>.maxWidth('100px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>height</td>
+<td><code>.height()</code></td>
+<td><code>.height('340px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-height</td>
+<td><code>.minHeight()</code></td>
+<td><code>.minHeight('340px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-height</td>
+<td><code>.maxHeight()</code></td>
+<td><code>.maxHeight('340px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>device-width</td>
+<td><code>.deviceWidth()</code></td>
+<td><code>.deviceWidth('960px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-device-width</td>
+<td><code>.minDeviceWidth()</code></td>
+<td><code>.minDeviceWidth('960px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-device-width</td>
+<td><code>.maxDeviceWidth()</code></td>
+<td><code>.maxDeviceWidth('960px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>device-height</td>
+<td><code>.height()</code></td>
+<td><code>.height('320px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-device-height</td>
+<td><code>.minDeviceHeight()</code></td>
+<td><code>.minDeviceHeight('340px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-device-height</td>
+<td><code>.maxDeviceHeight()</code></td>
+<td><code>.maxDeviceHeight('340px')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>aspect-ratio</td>
+<td><code>.aspectRatio()</code></td>
+<td><code>.aspectRatio('1/1')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-aspect-ratio</td>
+<td><code>.minAspectRatio()</code></td>
+<td><code>.minAspectRatio('1/1')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-aspect-ratio</td>
+<td><code>.maxAspectRatio()</code></td>
+<td><code>.maxAspectRatio('1/1')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>device-aspect-ratio</td>
+<td><code>.deviceAspectRatio()</code></td>
+<td><code>.deviceAspectRatio('16/9')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-device-aspect-ratio</td>
+<td><code>.minDeviceAspectRatio()</code></td>
+<td><code>.minDeviceAspectRatio('16/9')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-device-aspect-ratio</td>
+<td><code>.maxDeviceAspectRatio()</code></td>
+<td><code>.maxDeviceAspectRatio('16/9')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>color</td>
+<td><code>.color()</code></td>
+<td><code>n/a</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-color</td>
+<td><code>.minColor()</code></td>
+<td><code>.minColor('4')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-color</td>
+<td><code>.maxColor()</code></td>
+<td><code>.maxColor('4')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>color-index</td>
+<td><code>.colorIndex()</code></td>
+<td><code>.colorIndex('256')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-color-index</td>
+<td><code>.minColorIndex()</code></td>
+<td><code>.minColorIndex('256')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-color-index</td>
+<td><code>.maxColorIndex()</code></td>
+<td><code>.maxColorIndex('256')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>monochrome</td>
+<td><code>.monochrome()</code></td>
+<td><code>n/a</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-monochrome</td>
+<td><code>.minMonochrome()</code></td>
+<td><code>.minMonochrome('8')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-monochrome</td>
+<td><code>.maxMonochrome()</code></td>
+<td><code>.maxMonochrome('8')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>resolution</td>
+<td><code>.resolution()</code></td>
+<td><code>.resolution('300dpi')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>min-resolution</td>
+<td><code>.minResolution()</code></td>
+<td><code>.minResolution('300dpi')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>max-resolution</td>
+<td><code>.maxResolution()</code></td>
+<td><code>.maxResolution('300dpi')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>scan</td>
+<td><code>.scan()</code></td>
+<td><code>.scan('progressive')</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>grid</td>
+<td><code>.grid()</code></td>
+<td><code>n/a</code></td>
+<td><code>SuperQuery()</code>, <code>Logical Operator</code>, <code>Media Type</code></td>
+<td><code>Logical Operator</code>, <code>Breakpoints</code></td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+<h3>Screen Orientation</h3><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>How to Use</th>
+<th>Comes after of</th>
+<th>Following options</th>
+<th>Can set <code>css</code> after?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>landscape</td>
+<td><code>.landscape()</code></td>
+<td><code>Logical Operator</code></td>
+<td><code>Logical Operator</code></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>portrait</td>
+<td><code>.portrait()</code></td>
+<td><code>Logical Operator</code></td>
+<td><code>Logical Operator</code></td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+<h3>Logical Operator</h3><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>How to Use</th>
+<th>Comes after of</th>
+<th>Following options</th>
+<th>Can set <code>css</code> after?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td><code>.and()</code></td>
+<td><code>Media Feature</code>, <code>Screen Orientation</code>, <code>Breakpoints</code></td>
+<td><code>Media Type</code>, <code>Media Feature</code>, <code>Screen Orientation</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>or</td>
+<td><code>.or()</code></td>
+<td><code>Media Feature</code>, <code>Screen Orientation</code>, <code>Breakpoints</code></td>
+<td><code>Media Type</code>, <code>Media Feature</code>, <code>Screen Orientation</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>not</td>
+<td><code>.not()</code></td>
+<td><code>SuperQuery()</code></td>
+<td><code>Media Type</code></td>
+<td>✖</td>
+</tr>
+<tr>
+<td>only</td>
+<td><code>.only()</code></td>
+<td><code>SuperQuery()</code></td>
+<td><code>Media Type</code></td>
+<td>✖</td>
+</tr>
+</tbody>
+</table>
+<h3>Render CSS</h3><p>Simply call the <code>css</code> function as the last iteration and pass the <code>css syntax</code> throw <code>ES6 Tagged Template Literals</code>:</p>
+<pre class="prettyprint source lang-javascript"><code>SuperQuery().minWidth().md().css`
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+`</code></pre><h3>How to create custom breakpoints?</h3><p>One of the coolest features we have on SuperQuery is the possibility to overwrite our default breakpoints into your own custom.</p>
+<p>Here is how to do:</p>
+<pre class="prettyprint source lang-javascript"><code>
+// first we need to import the `configureBreakpoints` function
+import { configureBreakpoints } from '@themgoncalves/super-query';
+
+// here is an example of a custom breakpoint
+const customBreakpoints = {
+  extraSmall: 360,
+  small: 640,
+  medium: 960,
+  large: 1024,
+  extraLarge: 1200,
+  superExtraLarge: 1600,
+};
+
+// then just import your custom breakpoints into the `configureBreakpoints` and you are ready to go!
+configureBreakpoints(customBreakpoints);
+</code></pre><p>After that, you should be able to use it in the same conditions as the default ones.</p>
+<pre class="prettyprint source lang-javascript"><code>
+// first we need to import the `configureBreakpoints` function
+import { configureBreakpoints } from '@themgoncalves/super-query';
+
+// here is an example of a custom breakpoint
+const customBreakpoints = {
+  extraSmall: 360;
+  small: 640;
+  medium: 960,
+  large: 1024,
+  extraLarge: 1200,
+  superExtraLarge: 1600,
+};
+
+// then just import your custom breakpoints into the `configureBreakpoints` and you are ready to go!
+configureBreakpoints(customBreakpoints);</code></pre><p>Then you should be able to use it in the same conditions as the default breakpoints.</p>
+<p>See a demonstration of the above code:</p>
+<pre class="prettyprint source lang-javascript"><code>SuperQuery().minWidth().superExtraLarge().css`
+    content: 'You just called your own custom breakpoints!'
+`</code></pre><p><br /></p>
+<h2>Release History</h2><ul>
+<li>0.1.1<ul>
+<li>Fixed typo in the <code>ToString</code> method used for tests</li>
+<li>Minor fixes and improvement in the project's documentation</li>
+</ul>
+</li>
+<li>0.1.0<ul>
+<li>First release</li>
+<li>NEW: Added <code>configureBreakpoints()</code> to set custom breakpoints</li>
+</ul>
+</li>
+<li>0.0.1<ul>
+<li>Work in progress</li>
+</ul>
+</li>
+</ul>
+<p><br /></p>
+<h2>Meta</h2><h3>Author</h3><p><strong>Marcos Gonçalves</strong> – <a href="http://linkedin.com/in/themgoncalves/">LinkedIn</a> – <a href="http://www.themgoncalves.com">Website</a></p>
+<h3>License</h3><p>Distributed under the MIT license. <a href="/LICENSE">Click here</a> for more information.</p>
+<p><a href="https://github.com/themgoncalves/super-query">https://github.com/themgoncalves/super-query</a></p>
+<h2>Contributing</h2><ol>
+<li>Fork it (<a href="https://github.com/themgoncalves/super-query/fork">https://github.com/themgoncalves/super-query/fork</a>)</li>
+<li>Create your feature branch (<code>git checkout -b feature/fooBar</code>)</li>
+<li>Commit your changes (<code>git commit -m ':zap: Add some fooBar'</code>)</li>
+<li>Push to the branch (<code>git push origin feature/fooBar</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+<!-- Markdown link & img dfn's --></article>
+    </section>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+	@themgoncalves
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on 2018-06-12T13:42:26+02:00
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

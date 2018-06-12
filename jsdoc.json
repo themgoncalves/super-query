@@ -1,0 +1,31 @@
+{
+  "tags": {
+      "allowUnknownTags": false
+  },
+  "source": {
+      "include": "../source",
+      "includePattern": ".js$",
+      "excludePattern": "(node_modules/|docs)"
+  },
+  "plugins": [
+      "plugins/markdown"
+  ],
+  "opts": {
+      "template": "assets/template/docdash/",
+      "encoding": "utf8",
+      "destination": "doc/",
+      "recurse": true,
+      "verbose": true
+  },
+  "templates": {
+    "systemName"            : "🎠 SuperQuery",
+    "footer"                : "@themgoncalves",
+    "includeDate"           : "true",
+    "navType"               : "inline",
+    "theme"                 : "lumen",
+    "linenums"              : "true",
+    "inverseNav"            : "true",
+    "syntaxTheme"           : "default",
+    "search"                : "true" 
+  }
+}
