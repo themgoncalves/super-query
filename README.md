@@ -258,8 +258,8 @@ import { configureBreakpoints } from '@themgoncalves/super-query';
 
 // here is an example of a custom breakpoint
 const customBreakpoints = {
-  extraSmall: 360;
-  small: 640;
+  extraSmall: 360,
+  small: 640,
   medium: 960,
   large: 1024,
   extraLarge: 1200,
