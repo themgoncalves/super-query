@@ -1,14 +1,14 @@
 # 🎠 Super-Query
 > A super `media-query` for styled-component. Intuitive and easy of use.
 
-[![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
-[![GitHub issues][issues-image]][issues-url]
-[![GitHub stars][stars-image]][stars-url]
-[![GitHub forks][forks-image]][forks-url]
-[![Awesome][awesome-image]][awesome-url]
-[![GitHub All Releases][releases-image]][releases-url]
 [![Build Status][travis-ci-image]][travis-ci-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
+[![GitHub All Releases][releases-image]][releases-url]
+[![GitHub stars][stars-image]][stars-url]
+[![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
+[![GitHub issues][issues-image]][issues-url]
+[![NPM][npm-image]][npm-url]
+[![Awesome][awesome-image]][awesome-url]
 
 ## Description
 
@@ -356,3 +356,5 @@ Distributed under the MIT license. [Click here](/LICENSE) for more information.
 [travis-ci-url]: https://travis-ci.org/themgoncalves/super-query
 [coveralls-image]: https://coveralls.io/repos/github/themgoncalves/super-query/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/themgoncalves/super-query?branch=master
+[npm-image]: https://img.shields.io/npm/v/@themgoncalves/super-query.svg
+[npm-url]: https://www.npmjs.com/package/@themgoncalves/super-query
