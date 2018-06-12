@@ -212,10 +212,12 @@ const mediaQuery = () => {
    * @function MediaFeature
    * @desc Media Feature Selector
    * @example {@lang javascript}
-   * SuperQuery().width()
-   * SuperQuery().width('120px')
+   * SuperQuery().width();
+   * SuperQuery().width('120px');
+   * SuperQuery().minResolution('300dpi');
+   * SuperQuery().deviceAspectRatio('16/9');
    * @see mediaFeature
-   * @param {String} - Optional value to the Media Feature
+   * @param {String} - Optional value of the Media Feature
    * @returns {Object} - Object containing functions of {@link logicalOperator},
    * {@link module:Breakpoints#configureBreakpoints|breakpoints} and
    * {@link module:SuperQuery~css|css}.

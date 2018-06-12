@@ -164,7 +164,7 @@
             
         <p class="code-caption">Example of use together with `styled-components`</p>
     
-    <pre class="sunlight-highlight-javascript"> 
+    <pre class="sunlight-highlight-javascript">
 const Title = styled.h1&#x60;
   color: #666;
   font-size: 16px;
@@ -760,7 +760,7 @@ SuperQuery().screen().and()</pre>
 
             
 
-            <td class="description last"><p>Optional value to the Media Feature</p></td>
+            <td class="description last"><p>Optional value of the Media Feature</p></td>
         </tr>
 
     
@@ -860,8 +860,1058 @@ SuperQuery().screen().and()</pre>
         <h5>Example</h5>
         
     <pre class="sunlight-highlight-javascript">
-SuperQuery().width()
-SuperQuery().width(&#x27;120px&#x27;)</pre>
+SuperQuery().width();
+SuperQuery().width(&#x27;120px&#x27;);
+SuperQuery().minResolution(&#x27;300dpi&#x27;);
+SuperQuery().deviceAspectRatio(&#x27;16/9&#x27;);</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="~MediaType"><span class="type-signature">&lt;inner> </span>MediaType()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Media Type Selector</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="global.html#mediaTypes">mediaTypes</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Object containing functions of <a href="global.html#logicalOperator">logicalOperator</a> and
+<a href="global.html#mediaFeature">mediaFeature</a>.</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+SuperQuery().print()</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="~ScreenOrientation"><span class="type-signature">&lt;inner> </span>ScreenOrientation()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Screen Orientation Selector</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="global.html#screenOrientation">screenOrientation</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Object containing functions of <a href="global.html#logicalOperator">logicalOperator</a> and
+<a href="module-SuperQuery.html#~css">css</a></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+SuperQuery().all().and().portrait()</pre>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Module: SuperQuery</h1>
+<section>
+
+<header>
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>A media-query for styled-component</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>0.1.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li><a href="mailto:marx_souza@yahoo.com.br">Marcos Gonçalves</a></li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-license method-doc-label method-doc-details-label">License:</dt>
+	<dd class="tag-license">
+		<ul class="dummy">
+			<li>MIT</li>
+		</ul>
+	</dd>
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="global.html#initialLogicalOperator">initialLogicalOperator</a></li>
+			
+			<li><a href="global.html#mediaTypes">mediaTypes</a></li>
+			
+			<li><a href="global.html#mediaFeature">mediaFeature</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+        <p class="code-caption">Example of use together with `styled-components`</p>
+    
+    <pre class="sunlight-highlight-javascript">
+const Title = styled.h1&#x60;
+  color: #666;
+  font-size: 16px;
+  ${SuperQuery().minWidth().lg().css&#x60;
+    font-size: 20px;
+  &#x60;};
+  ${SuperQuery().minWidth().lg().and().landscape().css&#x60;
+    font-size: 26px;
+  &#x60;};
+&#x60;;</pre>
+
+
+        
+    
+    </div>
+
+    
+
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:styled-components</li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="~breakpoints"><span class="type-signature">&lt;inner> </span>breakpoints()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Breakpoint Selector</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="global.html#defaultBreakpoints">defaultBreakpoints</a></li>
+			
+			<li><a href="module-Breakpoints.html#configureBreakpoints">configureBreakpoints</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Object containing functions of <a href="global.html#logicalOperator">logicalOperator</a> and
+<a href="module-SuperQuery.html#~css">css</a></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+SuperQuery().minWidth().md()</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="~css"><span class="type-signature">&lt;inner> </span>css()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Render the given css syntax</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ES6 Tagged Template Literals containing your CSS syntax</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://www.styled-components.com/docs/advanced#tagged-template-literals">https://www.styled-components.com/docs/advanced#tagged-template-literals</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+SuperQuery().all().minWidth().md().css&#x60;
+ background-color: #CCC;
+&#x60;</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="~InitialLogicalOperator"><span class="type-signature">&lt;inner> </span>InitialLogicalOperator()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Initial Logical Operator Selector</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="global.html#initialLogicalOperator">initialLogicalOperator</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Object containing functions of <a href="global.html#mediaTypes">mediaTypes</a></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+SuperQuery().only()</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="~LogicalOperator"><span class="type-signature">&lt;inner> </span>LogicalOperator()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Logical Operator Selector</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="global.html#logicalOperator">logicalOperator</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Object containing functions of <a href="global.html#mediaTypes">mediaTypes</a>,
+<a href="global.html#mediaFeature">mediaFeature</a> and <a href="global.html#screenOrientation">screenOrientation</a>.</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+SuperQuery().screen().and()</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="~MediaFeature"><span class="type-signature">&lt;inner> </span>MediaFeature()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Media Feature Selector</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional value of the Media Feature</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="global.html#mediaFeature">mediaFeature</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Object containing functions of <a href="global.html#logicalOperator">logicalOperator</a>,
+<a href="module-Breakpoints.html#configureBreakpoints">breakpoints</a> and
+<a href="module-SuperQuery.html#~css">css</a>.</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+SuperQuery().width();
+SuperQuery().width(&#x27;120px&#x27;);
+SuperQuery().minResolution(&#x27;300dpi&#x27;);
+SuperQuery().deviceAspectRatio(&#x27;16/9&#x27;);</pre>
 
 
     
@@ -1157,7 +2207,7 @@ SuperQuery().all().and().portrait()</pre>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-06-12T13:42:26+02:00
+		on 2018-06-12T16:27:17+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
