@@ -5,16 +5,30 @@
  */
 
 /**
- * Screen Orientation
- * Required to track orientation change on mobile devices
+ * @name screenOrientation
+ * @desc Required to track orientation change on mobile devices
+ * @example {@lang javascript} landscape, portrait
+ * @global
+ * @const
  */
 const screenOrientation = { landscape: 'landscape', portrait: 'portrait' };
 
-
 /**
- * Default Breakpoints
- * Removed from the great work of `Bootstrap 4`
+ * @name defaultBreakpoints
+ * @desc Removed from the great work of `Bootstrap 4`.
+ * All values are defined in pixels (without the suffix `px`),
+ * to be further converted to `em` unit.
  * @see {@link https://getbootstrap.com/docs/4.0/layout/grid/}
+ * @example {@lang javascript}
+ * {
+ *  xs: 0
+ *  sm: 576
+ *  md: 768
+ *  lg: 992
+ *  xl: 1200
+ * }
+ * @global
+ * @const
  */
 const defaultBreakpoints = {
   xs: 0,
@@ -25,8 +39,13 @@ const defaultBreakpoints = {
 };
 
 /**
- * Media Types
- * Target all, one or more specific device
+ * @name mediaTypes
+ * @desc Target all, one or more specific device
+ * @example {@lang javascript}
+ * all | aural | braille | handheld | print |
+ * projection | screen | tty | tv | embossed
+ * @global
+ * @const
  */
 const mediaTypes = {
   all: 'all',
@@ -42,9 +61,23 @@ const mediaTypes = {
 };
 
 /**
- * Media Feature
- * Used to set <Expression> syntax
+ * @name mediaFeature
+ * @desc Used to set <Expression> syntax
  * expression: ( <media_feature> [: <value>]? )
+ * @example {@lang javascript}
+ * width | min-width | max-width
+ * height | min-height | max-height
+ * device-width | min-device-width | max-device-width
+ * device-height | min-device-height | max-device-height
+ * aspect-ratio | min-aspect-ratio | max-aspect-ratio
+ * device-aspect-ratio | min-device-aspect-ratio | max-device-aspect-ratio
+ * color | min-color | max-color
+ * color-index | min-color-index | max-color-index
+ * monochrome | min-monochrome | max-monochrome
+ * resolution | min-resolution | max-resolution
+ * | scan | grid
+ * @global
+ * @const
  */
 const mediaFeature = {
   width: 'width',
@@ -82,9 +115,15 @@ const mediaFeature = {
 };
 
 /**
- * Logical Operator
- * Used to join <expression> in the <media_query>
- *  media_query: <expression> [ and <expression> ]*
+ * @name logicalOperator
+ * @desc Used to join <expression> in the <media_query>
+ * expression: ( <media_feature> [: <value>]? )
+ * media_query: <expression> [ and <expression> ]*
+ * @example {@lang javascript}
+ * and
+ * or
+ * @global
+ * @const
  */
 const logicalOperator = {
   and: 'and',
@@ -92,16 +131,20 @@ const logicalOperator = {
 };
 
 /**
- * Initial Logical Operator
- * Used in the first condition of the <media_query>
+ * @name initialLogicalOperator
+ * @desc Used in the first condition of the <media_query>
  * media_query: [[only | not]? <media_type> [ and <expression> ]*]
+ * @example {@lang javascript}
+ * not
+ * only
+ * @global
+ * @const
  */
 const initialLogicalOperator = {
   not: 'not',
   only: 'only',
 };
 
-// Exports the objects
 export {
   screenOrientation,
   defaultBreakpoints,
