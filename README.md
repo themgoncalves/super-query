@@ -303,7 +303,9 @@ SuperQuery().minWidth().superExtraLarge().css`
 `
 ```
 
-### Orientation
+<br />
+
+### NEW: `Orientation`
 
 We have added in the `version 1.0.0` a new feature: `Orientation`, which is a `Screen Orientation manager`.
 
