@@ -1,11 +1,11 @@
 /**
  * SuperQuery
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 0.1.0
+ * @version 1.0.0
  */
 
-import SuperQuery, { configureBreakpoints } from './index';
-import { defaultBreakpoints } from './types';
+import SuperQuery, { configureBreakpoints } from '../index';
+import { defaultBreakpoints } from '../types/index';
 
 beforeEach(() => {
   configureBreakpoints(defaultBreakpoints);

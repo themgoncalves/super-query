@@ -1,56 +1,18 @@
 /**
  * SuperQuery
- * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
- * @version 0.1.0
+ * @author Marcos Gonçalves <contact@themgoncalves.com>
+ * @version 1.0.0
  */
 
 import { css } from 'styled-components';
-
+import { mediaBreakpoints } from './configureBreakpoints';
 import {
   screenOrientation,
-  defaultBreakpoints,
   mediaTypes,
   mediaFeature,
   logicalOperator,
   initialLogicalOperator,
 } from './types';
-
-/**
- * Set the initial media breakpoints
- * @ignore
- * @global
- */
-let mediaBreakpoints = defaultBreakpoints;
-
-/**
- * @module Breakpoints
- */
-/**
- * @function configureBreakpoints
- * @desc Overwrite SuperQuery default breakpoints
- * @see defaultBreakpoints
- * @instance
- * @param {Object} customBreakpoints - The custom breakpoints
- * object to overwrite the default condition.
- * @example {@lang javascript}
- * // first we need to import the `configureBreakpoints` function
- * import { configureBreakpoints } from '@themgoncalves/super-query';
- *
- * // here is an example of a custom breakpoint
- * const customBreakpoints = {
- *   extraSmall: 360,
- *   small: 640,
- *   medium: 960,
- *   large: 1024,
- *   extraLarge: 1200,
- *   superExtraLarge: 1600,
- * };
- *
- * // then just import your custom breakpoints into the `configureBreakpoints`
- * // and you are ready to go!
- * configureBreakpoints(customBreakpoints);
- */
-const configureBreakpoints = (customBreakpoints) => { mediaBreakpoints = customBreakpoints; };
 
 
 /**
@@ -71,9 +33,9 @@ const configureBreakpoints = (customBreakpoints) => { mediaBreakpoints = customB
  * @see initialLogicalOperator
  * @see mediaTypes
  * @see mediaFeature
- * @returns {Object} - With Proper Selectors that match current condition@author Terry Weiss
- * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
- * @version 0.1.0
+ * @returns {Object} - With Proper Selectors that match current condition
+ * @author Marcos Gonçalves <contact@themgoncalves.com>
+ * @version 1.0.0
  * @license MIT
  * @requires styled-components
  */
@@ -258,5 +220,3 @@ const mediaQuery = () => {
 
 
 export default mediaQuery;
-
-export { configureBreakpoints };

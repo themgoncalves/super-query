@@ -1,7 +1,7 @@
 /**
  * SuperQuery
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 0.1.0
+ * @version 1.0.0
  */
 
 /**

@@ -12,4 +12,4 @@ before_script:
 script:
   - yarn test
 after_success:
-  - yarn test:coverage
+  - yarn test:coverage:report

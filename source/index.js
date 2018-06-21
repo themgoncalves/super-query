@@ -1,10 +1,13 @@
 /**
  * SuperQuery
- * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
- * @version 0.1.0
+ * @author Marcos Gonçalves <contact@themgoncalves.com>
+ * @version 1.0.0
  */
 
-import query, { configureBreakpoints } from './query';
+import Query from './query';
+import configureBreakpoints from './configureBreakpoints';
+import Orientation from './orientation';
 
-export default query;
+export default Query;
 export { configureBreakpoints };
+export { Orientation };
