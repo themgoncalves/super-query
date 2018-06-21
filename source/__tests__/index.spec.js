@@ -1,6 +1,6 @@
 /**
  * SuperQuery
- * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
+ * @author Marcos Gonçalves <contact@themgoncalves.com>
  * @version 0.1.0
  */
 

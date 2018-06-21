@@ -29,23 +29,23 @@
 	</div>
 	<div class="navbar-collapse collapse" id="topNavigation">
 		<ul class="nav navbar-nav">
-			
+
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
 					<li><a href="global_defaultBreakpoints.html#.module:SuperQuery">global:defaultBreakpoints.SuperQuery</a></li><li><a href="module-Breakpoints.html">Breakpoints</a></li>
 				</ul>
 			</li>
-			
+
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
 					<li><a href="global.html#DefaultBreakpoints">Default Breakpoints</a></li><li><a href="global.html#MediaFeature">Media Feature</a></li><li><a href="global.html#MediaTypes">Media Types</a></li><li><a href="global.html#ScreenOrientation">Screen Orientation</a></li>
 				</ul>
 			</li>
-			
+
 		</ul>
-        
+
             <div class="col-sm-3 col-md-3">
                 <form class="navbar-form" role="search">
                     <div class="input-group">
@@ -56,7 +56,7 @@
                     </div>
                 </form>
             </div>
-        
+
 	</div>
 
 </div>
@@ -66,91 +66,91 @@
 <div class="container" id="toc-content">
 <div class="row">
 
-	
+
 	<div class="col-md-8">
-	
+
 		<div id="main">
-			
+
 
 	<h1 class="page-title">Module: SuperQuery</h1>
 <section>
 
 <header>
-    
+
 </header>
 
 
 <article>
     <div class="container-overview">
-    
-        
+
+
             <div class="description"><p>A media-query for styled-component</p></div>
-        
 
-        
+
+
 <dl class="details">
-    
 
-	
+
+
 	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
 	<dd class="tag-version">
 		<ul class="dummy">
 			<li>0.1.0</li>
 		</ul>
 	</dd>
-	
 
-	
 
-	
 
-    
 
-    
 
-    
 
-    
 
-	
 
-	
+
+
+
+
+
+
+
+
+
 	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
 	<dd class="tag-author">
 		<ul>
-			<li><a href="mailto:marx_souza@yahoo.com.br">Marcos Gonçalves</a></li>
+			<li><a href="mailto:contact@themgoncalves.com">Marcos Gonçalves</a></li>
 			</ul>
 	</dd>
-	
 
-	
 
-	
+
+
+
 	<dt class="tag-license method-doc-label method-doc-details-label">License:</dt>
 	<dd class="tag-license">
 		<ul class="dummy">
 			<li>MIT</li>
 		</ul>
 	</dd>
-	
-
-	
 
 
 
-	
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
 </dl>
 
 
-        
+
             <h3>Example</h3>
-            
+
     <pre class="sunlight-highlight-javascript">
 SuperQuery().all()
 SuperQuery().only()
@@ -158,108 +158,108 @@ SuperQuery().print()
 SuperQuery().width()</pre>
 
 
-        
-    
+
+
     </div>
 
-    
 
-    
+
+
         <h3 class="subsection-title">Requires</h3>
 
         <ul>
             <li>module:styled-components</li>
         </ul>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
-            
+
 <hr>
 <dt>
     <h4 class="name" id="~breakpoints"><span class="type-signature">&lt;inner> </span>breakpoints()</h4>
-    
-    
+
+
 </dt>
 <dd>
 
-    
+
     <div class="description">
         <p>Breakpoint Selector</p>
     </div>
-    
 
-    
 
-    
 
-    
-    
 
-    
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
     <h5>Returns:</h5>
-    
-            
+
+
 <div class="param-desc">
     <ul>
 <li>With Proper Selectors that match current condition</li>
@@ -273,7 +273,7 @@ SuperQuery().width()</pre>
         Type
     </dt>
     <dd>
-        
+
 <span class="param-type">Object</span>
 
 
@@ -282,235 +282,235 @@ SuperQuery().width()</pre>
 </dl>
 
 
-        
 
-    
+
+
         <h5>Example</h5>
-        
+
     <pre class="sunlight-highlight-javascript">
 SuperQuery().minWidth().md()</pre>
 
 
-    
+
 </dd>
 
-        
-            
+
+
 <hr>
 <dt>
     <h4 class="name" id="~css"><span class="type-signature">&lt;inner> </span>css()</h4>
-    
-    
+
+
 </dt>
 <dd>
 
-    
+
     <div class="description">
         <p>Render the given css syntax</p>
     </div>
-    
 
-    
 
-    
 
-    
-    
+
+
+
+
+
         <h5>Parameters:</h5>
-        
+
 
 <table class="params table table-striped">
     <thead>
     <tr>
-        
+
 
         <th>Type</th>
 
-        
 
-        
+
+
 
         <th class="last">Description</th>
     </tr>
     </thead>
 
     <tbody>
-    
+
 
         <tr>
-            
+
 
             <td class="type">
-            
-                
+
+
 <span class="param-type">String</span>
 
 
 
-            
+
             </td>
 
-            
 
-            
+
+
 
             <td class="description last"><p>ES6 Tagged Template Literals containing your CSS syntax</p></td>
         </tr>
 
-    
+
     </tbody>
 </table>
 
-    
 
-    
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
 	<dd class="tag-see">
 		<ul>
 			<li><a href="https://www.styled-components.com/docs/advanced#tagged-template-literals">https://www.styled-components.com/docs/advanced#tagged-template-literals</a></li>
 			</ul>
 	</dd>
-	
 
-	
+
+
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
         <h5>Example</h5>
-        
+
     <pre class="sunlight-highlight-javascript">
 SuperQuery().all().minWidth().md().css&#x60;
  background-color: #CCC;
 &#x60;</pre>
 
 
-    
+
 </dd>
 
-        
-            
+
+
 <hr>
 <dt>
     <h4 class="name" id="~InitialLogicalOperator"><span class="type-signature">&lt;inner> </span>InitialLogicalOperator()</h4>
-    
-    
+
+
 </dt>
 <dd>
 
-    
+
     <div class="description">
         <p>Initial Logical Operator Selector</p>
     </div>
-    
 
-    
 
-    
 
-    
-    
 
-    
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
     <h5>Returns:</h5>
-    
-            
+
+
 <div class="param-desc">
     <ul>
 <li>With Proper Selectors that match current condition</li>
@@ -524,7 +524,7 @@ SuperQuery().all().minWidth().md().css&#x60;
         Type
     </dt>
     <dd>
-        
+
 <span class="param-type">Object</span>
 
 
@@ -533,95 +533,95 @@ SuperQuery().all().minWidth().md().css&#x60;
 </dl>
 
 
-        
 
-    
+
+
         <h5>Example</h5>
-        
+
     <pre class="sunlight-highlight-javascript">
 SuperQuery().only()</pre>
 
 
-    
+
 </dd>
 
-        
-            
+
+
 <hr>
 <dt>
     <h4 class="name" id="~LogicalOperator"><span class="type-signature">&lt;inner> </span>LogicalOperator()</h4>
-    
-    
+
+
 </dt>
 <dd>
 
-    
+
     <div class="description">
         <p>Logical Operator Selector</p>
     </div>
-    
 
-    
 
-    
 
-    
-    
 
-    
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
     <h5>Returns:</h5>
-    
-            
+
+
 <div class="param-desc">
     <ul>
 <li>With Proper Selectors that match current condition</li>
@@ -635,7 +635,7 @@ SuperQuery().only()</pre>
         Type
     </dt>
     <dd>
-        
+
 <span class="param-type">Object</span>
 
 
@@ -644,141 +644,141 @@ SuperQuery().only()</pre>
 </dl>
 
 
-        
 
-    
+
+
         <h5>Example</h5>
-        
+
     <pre class="sunlight-highlight-javascript">
 SuperQuery().screen().and()</pre>
 
 
-    
+
 </dd>
 
-        
-            
+
+
 <hr>
 <dt>
     <h4 class="name" id="~MediaFeature"><span class="type-signature">&lt;inner> </span>MediaFeature()</h4>
-    
-    
+
+
 </dt>
 <dd>
 
-    
+
     <div class="description">
         <p>Media Feature Selector</p>
     </div>
-    
 
-    
 
-    
 
-    
-    
+
+
+
+
+
         <h5>Parameters:</h5>
-        
+
 
 <table class="params table table-striped">
     <thead>
     <tr>
-        
+
 
         <th>Type</th>
 
-        
 
-        
+
+
 
         <th class="last">Description</th>
     </tr>
     </thead>
 
     <tbody>
-    
+
 
         <tr>
-            
+
 
             <td class="type">
-            
-                
+
+
 <span class="param-type">String</span>
 
 
 
-            
+
             </td>
 
-            
 
-            
+
+
 
             <td class="description last"><p>Optional value to the Media Feature</p></td>
         </tr>
 
-    
+
     </tbody>
 </table>
 
-    
 
-    
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
     <h5>Returns:</h5>
-    
-            
+
+
 
 
 <dl>
@@ -786,7 +786,7 @@ SuperQuery().screen().and()</pre>
         Type
     </dt>
     <dd>
-        
+
 <span class="param-type">Object</span>
 
 
@@ -795,96 +795,96 @@ SuperQuery().screen().and()</pre>
 </dl>
 
 
-        
 
-    
+
+
         <h5>Example</h5>
-        
+
     <pre class="sunlight-highlight-javascript">
 SuperQuery().width()
 SuperQuery().width(&#x27;120px&#x27;)</pre>
 
 
-    
+
 </dd>
 
-        
-            
+
+
 <hr>
 <dt>
     <h4 class="name" id="~MediaType"><span class="type-signature">&lt;inner> </span>MediaType()</h4>
-    
-    
+
+
 </dt>
 <dd>
 
-    
+
     <div class="description">
         <p>Media Type Selector</p>
     </div>
-    
 
-    
 
-    
 
-    
-    
 
-    
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
     <h5>Returns:</h5>
-    
-            
+
+
 
 
 <dl>
@@ -892,7 +892,7 @@ SuperQuery().width(&#x27;120px&#x27;)</pre>
         Type
     </dt>
     <dd>
-        
+
 <span class="param-type">Object</span>
 
 
@@ -901,95 +901,95 @@ SuperQuery().width(&#x27;120px&#x27;)</pre>
 </dl>
 
 
-        
 
-    
+
+
         <h5>Example</h5>
-        
+
     <pre class="sunlight-highlight-javascript">
 SuperQuery().print()</pre>
 
 
-    
+
 </dd>
 
-        
-            
+
+
 <hr>
 <dt>
     <h4 class="name" id="~ScreenOrientation"><span class="type-signature">&lt;inner> </span>ScreenOrientation()</h4>
-    
-    
+
+
 </dt>
 <dd>
 
-    
+
     <div class="description">
         <p>Screen Orientation Selector</p>
     </div>
-    
 
-    
 
-    
 
-    
-    
 
-    
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
     <h5>Returns:</h5>
-    
-            
+
+
 <div class="param-desc">
     <ul>
 <li>With Proper Selectors that match current condition</li>
@@ -1003,7 +1003,7 @@ SuperQuery().print()</pre>
         Type
     </dt>
     <dd>
-        
+
 <span class="param-type">Object</span>
 
 
@@ -1012,24 +1012,24 @@ SuperQuery().print()</pre>
 </dl>
 
 
-        
 
-    
+
+
         <h5>Example</h5>
-        
+
     <pre class="sunlight-highlight-javascript">
 SuperQuery().all().and().portrait()</pre>
 
 
-    
+
 </dd>
 
         </dl>
-    
 
-    
 
-    
+
+
+
 </article>
 
 </section>
@@ -1042,11 +1042,11 @@ SuperQuery().all().and().portrait()</pre>
 
 	<div class="clearfix"></div>
 
-	
+
 		<div class="col-md-3">
 			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
 		</div>
-	
+
 
 </div>
 </div>
@@ -1075,9 +1075,9 @@ SuperQuery().all().and().portrait()</pre>
 
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
-	
+
 		on 2018-06-12T12:20:31+02:00
-	
+
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
 </footer>

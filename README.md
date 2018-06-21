@@ -121,7 +121,7 @@ const Title = styled.h1`
 See how easy to implement it is?
 
 
-## Documentation
+## API Documentation
 
 This package follows the `css3 media query` rule, [click here to check it out](https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries).
 
@@ -303,17 +303,85 @@ SuperQuery().minWidth().superExtraLarge().css`
 `
 ```
 
+### Orientation
+
+We have added in the `version 1.0.0` a new feature: `Orientation`, which is a `Screen Orientation manager`.
+
+This feature is an implementation of the Web API `Screen.orientation` available in the modern browser.
+
+Note that this feature might not work on a several environments, like in the `iOS`.
+For more information, [click here and check the browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Screen/orientation)
+
+**How to use**
+
+```javascript
+import { Orientation } from '@themgoncalves/super-query';
+
+// or you can import direct the module
+
+import Orientation from '@themgoncalves/super-query/orientation';
+```
+
+**Listening for screen orientation change**
+
+```javascript
+Orientation.onChange((orientation) => {
+    console.inf('Screen orientation has changed to: ', orientation);
+});
+```
+
+**Get the `current orientation`**
+
+```javascript
+const currentOrientation = Orientation.current();
+console.info('Current screen orientation: ', currentOrientation);
+```
+
+**Locking the orientation**
+
+```javascript
+// screen orientations available to be locked:
+// landscape-primary
+// landscape-secondary
+// portrait-primary
+// portrait-secondary
+
+const wasScreenLocked = Orientation.lock('portrait-primary');
+
+// or you can pass an array with the orientations to be locked
+const wasScreenLocked = Orientation.lock(['portrait-primary', 'portrait-secondary']);
+
+console.info('Was screen locked? ', wasScreenLocked);
+```
+
+**Unlocking the screen**
+
+```javascript
+const wasScreenUnlocked = Orientation.unlock();
+console.info('Was screen unlocked? ', wasScreenUnlocked);
+```
+
+**Check if the screen orientation was `locked` before**
+
+```javascript
+const wasScreenOrientationLocked = Orientation.isLocked();
+console.info('Was screen orientation locked before? ', wasScreenOrientationLocked);
+```
 
 <br />
 
 ## Release History
-
+* 1.0.0
+    * Stable version
+    * NEW: Created `Orientation` - Screen Orientation management
+    * NEW: Created `Example` (Demo) of Super-Query
+    * Improved folder structure
 * 0.1.1
     * Fixed typo in the `ToString` method used for tests
     * Minor fixes and improvement in the project's documentation
 * 0.1.0
     * First release
-    * NEW: Added `configureBreakpoints()` to set custom breakpoints
+    * NEW: Created `configureBreakpoints()` to set custom breakpoints
 * 0.0.1
     * Work in progress
 
