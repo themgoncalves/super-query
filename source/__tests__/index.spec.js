@@ -4,12 +4,7 @@
  * @version 1.0.0
  */
 
-import SuperQuery, { configureBreakpoints } from '../index';
-import { defaultBreakpoints } from '../types/index';
-
-beforeEach(() => {
-  configureBreakpoints(defaultBreakpoints);
-});
+import SuperQuery from '../index';
 
 describe('SuperQuery', () => {
   it('should query without media type `all` -> @media (max-width: 100px)', () => {
@@ -65,8 +60,7 @@ describe('SuperQuery', () => {
       extraLarge: 1234,
     };
 
-    configureBreakpoints(customBreakpoints);
-    const result = SuperQuery().minWidth().extraLarge().ToString();
+    const result = SuperQuery(customBreakpoints).minWidth().extraLarge().ToString();
     expect(result).toEqual('@media (min-width: 77.125em)');
   });
 
