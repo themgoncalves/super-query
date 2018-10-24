@@ -5,7 +5,7 @@
  */
 
 import { css } from 'styled-components';
-import { mediaBreakpoints } from './configureBreakpoints';
+import { defaultBreakpoints } from './types';
 import {
   screenOrientation,
   mediaTypes,
@@ -40,7 +40,12 @@ import {
  * @requires styled-components
  */
 /* eslint-disable no-use-before-define */
-const mediaQuery = () => {
+const mediaQuery = (mediaBreakpoints = defaultBreakpoints) => {
+  // mediaBreakpoints validation
+  // we want to make sure that a proper object is passed
+  // otherwise, we will reassign it with the default breakpoints
+  if (!(mediaBreakpoints instanceof Object) || !Object.keys(mediaBreakpoints).length) { mediaBreakpoints = defaultBreakpoints }
+
   // Media query string
   // It's used to mount the `media query` statement after every object call
   let query = '@media ';

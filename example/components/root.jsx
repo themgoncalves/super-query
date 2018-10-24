@@ -133,10 +133,10 @@ const ExampleBreakpoints = styled.div`
   &::before {
     content: 'Breakpoint .xs()';
   }
-  ${SuperQuery().all()
+  ${props => SuperQuery(props.theme.breakpoints).all()
     .and()
     .minWidth()
-    .sm()
+    .small()
     .css`
     background-color: rgba(255, 255, 255, 0.2);
     &::before {
