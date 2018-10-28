@@ -9,15 +9,21 @@ let mediaBreakpoints = defaultBreakpoints; // eslint-disable-line import/no-muta
 
 /**
  * @module Breakpoints
+ * @deprecated since version 2.0.0
  */
 /**
  * @function configureBreakpoints
- * @desc Overwrite SuperQuery default breakpoints
+ * @deprecated since version 2.0.0
+ * @desc override SuperQuery default breakpoints
  * @see defaultBreakpoints
  * @instance
  * @param {Object} customBreakpoints - The custom breakpoints
- * object to overwrite the default condition.
+ * object to override the default condition.
  * @example {@lang javascript}
+ * // WARNING: This method was deprecated since version 2.0.0
+ * // use SuperQuery(myCustomBreakpoints) instead
+ *
+ *
  * // first we need to import the `configureBreakpoints` function
  * import { configureBreakpoints } from '@themgoncalves/super-query';
  *
@@ -35,7 +41,14 @@ let mediaBreakpoints = defaultBreakpoints; // eslint-disable-line import/no-muta
  * // and you are ready to go!
  * configureBreakpoints(customBreakpoints);
  */
-const configureBreakpoints = (customBreakpoints) => { mediaBreakpoints = customBreakpoints; };
+const configureBreakpoints = (customBreakpoints) => {
+  console.warn('' +
+    'DEPRECATED WARNING: configureBreakpoints was deprecated since version 2.0.0. \n\n' +
+    'Use SuperQuery(myCustomBreakpoints) instead. \n\n' +
+    'See documentation: https://bit.ly/2zaJLrH'
+  );
+  return mediaBreakpoints = customBreakpoints;
+};
 
 export default configureBreakpoints;
 export { mediaBreakpoints };

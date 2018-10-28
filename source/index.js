@@ -1,7 +1,7 @@
 /**
  * SuperQuery
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 import Query from './query';

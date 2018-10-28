@@ -1,11 +1,11 @@
 /**
  * SuperQuery
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 import { css } from 'styled-components';
-import { defaultBreakpoints } from './types';
+import { mediaBreakpoints as defaultBreakpoints } from './configureBreakpoints';
 import {
   screenOrientation,
   mediaTypes,
@@ -19,13 +19,20 @@ import {
  * @function SuperQuery
  * @module SuperQuery
  * @desc A media-query for styled-component
+ * @param {Object} mediaBreakpoints - Optional - Custom breakpoints object to overwrite the default condition.
  * @example <caption>Example of use together with `styled-components`</caption> {@lang javascript}
  * const Title = styled.h1`
  *   color: #666;
  *   font-size: 16px;
- *   ${SuperQuery().minWidth().lg().css`
+ *   // Use with your custom breakpoints directly from `ThemeProvider`
+ *   ${props => SuperQuery(props.theme.breakpoints).minWidth().large().css`
  *     font-size: 20px;
  *   `};
+ *   // Or directly from an object
+ *   ${SuperQuery(myCuystombreakpoints).minWidth().large().css`
+ *     font-size: 20px;
+ *   `};
+ *    // Or use the built-in breakpoints instead
  *   ${SuperQuery().minWidth().lg().and().landscape().css`
  *     font-size: 26px;
  *   `};
@@ -35,7 +42,7 @@ import {
  * @see mediaFeature
  * @returns {Object} - With Proper Selectors that match current condition
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 1.0.0
+ * @version 2.0.0
  * @license MIT
  * @requires styled-components
  */
