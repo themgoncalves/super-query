@@ -32,40 +32,53 @@ For those developers who need more control over the `styled-component` based app
 How about create a `media query` that handles screen widths between `360px` and `1024px` ?
 
 ```javascript
-SuperQuery().minWidth('360px').and().maxWidth('1024px').css`
+const myStyledComponent = styled.div`
+  ...
+  ${SuperQuery().minWidth('360px').and().maxWidth('1024px').css`
     content: 'this is awesome!'
+  `}
 `
 ```
 
 Cool, right? But it's even cooler to use our `built-in` breakpoints, let's rewrite it!
 
 ```javascript
-SuperQuery().minWidth().sm().and().maxWidth().lg().css`
+const myStyledComponent = styled.div`
+  ...
+  ${SperQuery().minWidth().sm().and().maxWidth().lg().css`
     content: 'this is even more awesome!'
+  `}
 `
 ```
 
 Of even how about control the `screen orientation` over `mobile` devices ?
 
 ```javascript
-SuperQuery().maxWidth().md().and().landscape().css`
+const myStyledComponent = styled.div`
+  ...
+  ${SuperQuery().maxWidth().md().and().landscape().css`
     content: 'Yep! Your device is on landscape mode!'
+  `}
 `
 ```
 
 Want a more `complex query` ?
 
 ```javascript
-SuperQuery()
-      .screen()
-      .and()
-      .deviceAspectRatio('16/9')
-      .or()
-      .screen()
-      .and()
-      .deviceAspectRatio('16/10')
-      .css`
-    content: 'this is awesome!'
+
+const myStyledComponent = styled.div`
+  ...
+  ${SuperQuery()
+     .screen()
+     .and()
+     .deviceAspectRatio('16/9')
+     .or()
+     .screen()
+     .and()
+     .deviceAspectRatio('16/10')
+     .css`
+    content: 'Yep! Your device is on landscape mode!'
+  `}
 `
 ```
 
@@ -237,26 +250,29 @@ media_feature: width | min-width | max-width
 Simply call the `css` function as the last iteration and pass the `css syntax` throw `ES6 Tagged Template Literals`:
 
 ```javascript
-SuperQuery().minWidth().md().css`
-  color: white;
-  font-size: 14px;
-  text-decoration: none;
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  SuperQuery().minWidth().md().css`
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+  `
 `
 ```
 
 
 ### How to create custom breakpoints?
 
-One of the coolest features we have on SuperQuery is the possibility to overwrite our default breakpoints into your own custom.
+One of the coolest features we have on SuperQuery is the possibility to override our default breakpoints into your own custom.
 
 Here is how to do:
 
 ```javascript
+import SuperQuery from '@themgoncalves/super-query';
 
-// first we need to import the `configureBreakpoints` function
-import { configureBreakpoints } from '@themgoncalves/super-query';
-
-// here is an example of a custom breakpoint
+// Here is an example of a custom breakpoint
 const customBreakpoints = {
   extraSmall: 360,
   small: 640,
@@ -266,41 +282,25 @@ const customBreakpoints = {
   superExtraLarge: 1600,
 };
 
-// then just import your custom breakpoints into the `configureBreakpoints` and you are ready to go!
-configureBreakpoints(customBreakpoints);
+// Then just import your custom breakpoints into the `SuperQuery`
+// and you are Zready start use it!
+const Title = styled.h1`
+  color: #666;
+  font-size: 16px;
+  ${SuperQuery(customBreakpoints).minWidth().superExtraLarge().css`
+    font-size: 20px;
+  `};
+`;
 
-```
+// Or your custom breakpoints directly from `ThemeProvider`
+const Title = styled.h1`
+  color: #666;
+  font-size: 16px;
+  ${props => SuperQuery(props.theme.breakpoints).minWidth().superExtraLarge().css`
+    font-size: 20px;
+  `};
+`;
 
-After that, you should be able to use it in the same conditions as the default ones.
-
-
-```javascript
-
-// first we need to import the `configureBreakpoints` function
-import { configureBreakpoints } from '@themgoncalves/super-query';
-
-// here is an example of a custom breakpoint
-const customBreakpoints = {
-  extraSmall: 360;
-  small: 640;
-  medium: 960,
-  large: 1024,
-  extraLarge: 1200,
-  superExtraLarge: 1600,
-};
-
-// then just import your custom breakpoints into the `configureBreakpoints` and you are ready to go!
-configureBreakpoints(customBreakpoints);
-```
-
-Then you should be able to use it in the same conditions as the default breakpoints.
-
-See a demonstration of the above code:
-
-```javascript
-SuperQuery().minWidth().superExtraLarge().css`
-    content: 'You just called your own custom breakpoints!'
-`
 ```
 
 <br />
@@ -373,6 +373,9 @@ console.info('Was screen orientation locked before? ', wasScreenOrientationLocke
 <br />
 
 ## Release History
+* 2.0.0
+    * NEW: Option to override  `bult-in breakpoints` directly from `SuperQuery(myCustombreakpoints)`
+    * DEPRECATED: `configureBreakpoints()` to set custom breakpoints, use `SuperQuery(myCustombreakpoints)` instead
 * 1.0.0
     * Stable version
     * NEW: Created `Orientation` - Screen Orientation management
