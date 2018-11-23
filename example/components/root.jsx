@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import SuperQuery, { Orientation } from '@themgoncalves/super-query';
 
 export default class Root extends React.Component {
@@ -10,6 +10,7 @@ export default class Root extends React.Component {
       isOrientationLocked: Orientation.isLocked(),
     };
   }
+
   componentDidMount() {
     Orientation.onChange(this.onOrientationChange);
   }
@@ -37,6 +38,7 @@ export default class Root extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <GlobalStyle />
         <Title><span aria-label="icon" role="img">🎠</span> Super-Query</Title>
         <Subtitle>A super media-query for styled-component. Intuitive and easy of use.</Subtitle>
         <Wrapper>
@@ -66,7 +68,7 @@ export default class Root extends React.Component {
   }
 };
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   html,
   body {
     height: 100%;
@@ -133,40 +135,40 @@ const ExampleBreakpoints = styled.div`
   &::before {
     content: 'Breakpoint .xs()';
   }
-  ${props => SuperQuery(props.theme.breakpoints).all()
-    .and()
-    .minWidth()
-    .small()
+  ${props => SuperQuery(props.theme.breakpoints).all
+    .and
+    .minWidth
+    .small
     .css`
     background-color: rgba(255, 255, 255, 0.2);
     &::before {
       content: 'Breakpoint .sm()';
     }
   `};
-  ${SuperQuery().all()
-    .and()
-    .minWidth()
-    .md()
+  ${SuperQuery().all
+    .and
+    .minWidth
+    .md
     .css`
     background-color: rgb(0, 216, 255);
     &::before {
       content: 'Breakpoint .md()';
     }
   `};
-  ${SuperQuery().all()
-    .and()
-    .minWidth()
-    .lg()
+  ${SuperQuery().all
+    .and
+    .minWidth
+    .lg
     .css`
     background-color: rgb(0, 145, 255);
     &::before {
       content: 'Breakpoint .lg()';
     }
   `};
-  ${SuperQuery().all()
-    .and()
-    .minWidth()
-    .xl()
+  ${SuperQuery().all
+    .and
+    .minWidth
+    .xl
     .css`
     background-color: rgb(29, 89, 134);
     &::before {
@@ -181,9 +183,9 @@ const ExampleOrientation = styled.div`
   border: dotted 4px white;
   margin: 0 40px;
   margin-bottom: 80px;
-  ${SuperQuery().all()
-    .and()
-    .portrait()
+  ${SuperQuery().all
+    .and
+    .portrait
     .css`
     background-color: rgb(61, 174, 61);
     &::before {
@@ -191,9 +193,9 @@ const ExampleOrientation = styled.div`
     }
   `};
 
-  ${SuperQuery().all()
-    .and()
-    .landscape()
+  ${SuperQuery().all
+    .and
+    .landscape
     .css`
     background-color: rgb(255, 94, 12);
     &::before {
@@ -229,4 +231,3 @@ const Note = styled.li`
     margin-left: 10px;
   }
 `;
-

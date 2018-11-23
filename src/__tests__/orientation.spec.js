@@ -1,10 +1,10 @@
 /**
  * SuperQuery
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.0.0
+ * @version 3.0.0
  */
 
-import { Orientation } from '../index';
+import Orientation from '../core/orientation';
 
 describe('Orientation', () => {
   it('Should return a array of object', () => {
@@ -15,7 +15,7 @@ describe('Orientation', () => {
       onChange: jest.fn(),
       unlock: jest.fn(),
     };
-    Object.keys(options).forEach(key => {
+    Object.keys(options).forEach((key) => {
       expect(Orientation).toHaveProperty(key);
     });
   });
@@ -36,7 +36,8 @@ describe('Orientation', () => {
     expect(Orientation.unlock()).toBeFalsy();
   });
 
-  it('Should trigger callback function when orientation has changed', () => {const map = {};
+  it('Should trigger callback function when orientation has changed', () => {
+    const map = {};
     window.addEventListener = jest.fn((event, cb) => {
       map[event] = cb;
     });
@@ -46,7 +47,8 @@ describe('Orientation', () => {
     expect(callback).toHaveBeenCalled();
   });
 
-  it('Should trigger callback function when orientation has changed', () => {const map = {};
+  it('Should trigger callback function when orientation has changed', () => {
+    const map = {};
     window.addEventListener = jest.fn((event, cb) => {
       map[event] = cb;
     });

@@ -34,7 +34,7 @@ How about create a `media query` that handles screen widths between `360px` and 
 ```javascript
 const myStyledComponent = styled.div`
   ...
-  ${SuperQuery().minWidth('360px').and().maxWidth('1024px').css`
+  ${SuperQuery().minWidth.of('360px').and.maxWidth.of('1024px').css`
     content: 'this is awesome!'
   `}
 `
@@ -45,7 +45,7 @@ Cool, right? But it's even cooler to use our `built-in` breakpoints, let's rewri
 ```javascript
 const myStyledComponent = styled.div`
   ...
-  ${SperQuery().minWidth().sm().and().maxWidth().lg().css`
+  ${SperQuery().minWidth.sm.and.maxWidth.lg.css`
     content: 'this is even more awesome!'
   `}
 `
@@ -56,7 +56,7 @@ Of even how about control the `screen orientation` over `mobile` devices ?
 ```javascript
 const myStyledComponent = styled.div`
   ...
-  ${SuperQuery().maxWidth().md().and().landscape().css`
+  ${SuperQuery().maxWidth.md.and.landscape.css`
     content: 'Yep! Your device is on landscape mode!'
   `}
 `
@@ -69,13 +69,15 @@ Want a more `complex query` ?
 const myStyledComponent = styled.div`
   ...
   ${SuperQuery()
-     .screen()
-     .and()
-     .deviceAspectRatio('16/9')
-     .or()
-     .screen()
-     .and()
-     .deviceAspectRatio('16/10')
+     .screen
+     .and
+     .deviceAspectRatio
+     .of('16/9')
+     .or
+     .screen
+     .and
+     .deviceAspectRatio
+     .of('16/10')
      .css`
     content: 'Yep! Your device is on landscape mode!'
   `}
@@ -122,16 +124,51 @@ Then, we are ready to mix it with `styled-component`:
 const Title = styled.h1`
   color: #666;
   font-size: 16px;
-  ${SuperQuery().minWidth().lg().css`
+  ${SuperQuery().minWidth.lg.css`
     font-size: 20px;
   `};
-  ${SuperQuery().minWidth().lg().and().landscape().css`
+  ${SuperQuery().minWidth.lg.and.landscape.css`
     font-size: 26px;
   `};
 `;
 ```
 
 See how easy to implement it is?
+
+### Implementation TIP!
+
+If you're using `ThemeProvider` from `styled-components`, it might be an excellent idea to place `SuperQuery`
+as member of you `theme configuration`, this will eliminate the need to import it every single time you need to use
+and also, you only need to customize your `breakpoints` once! 😜
+
+```jsx
+// theme.js
+import SuperQuery from '@themgoncalves/super-query';
+
+const theme = {
+    typography: {
+        fonts: {
+            roboto: "'Roboto', sans-serif",
+        },
+    },
+    SuperQuery: SuperQuery(breakpoints),
+};
+
+export default theme;
+```
+
+And then, you can access it directly from the `props.theme`.
+E.g.
+
+```js
+
+const myStyledComponent = styled.div`
+  ...
+  ${props.theme.SuperQuery.minWidth.sm.and.maxWidth.lg.css`
+    content: 'this is even more awesome!'
+  `}
+`
+```
 
 
 ## API Documentation
@@ -169,81 +206,81 @@ media_feature: width | min-width | max-width
 
 | Type | How to Use | Size | Comes after of | Following options | Can set `css` after?  |
 ---|---|---|---|---|---|
-| xs | `.xs()` | 0px | `Media Feature` | `Logical Operator` | ✔ |
-| sm | `.sm()` | 576px | `Media Feature` | `Logical Operator` | ✔ |
-| md | `.md()` | 768px | `Media Feature` | `Logical Operator` | ✔ |
-| lg | `.lg()` | 992px | `Media Feature` | `Logical Operator` | ✔ |
-| xl | `.xl()` | 1200px | `Media Feature` | `Logical Operator` | ✔ |
+| xs | `.xs` | 0px | `Media Feature` | `Logical Operator` | ✔ |
+| sm | `.sm` | 576px | `Media Feature` | `Logical Operator` | ✔ |
+| md | `.md` | 768px | `Media Feature` | `Logical Operator` | ✔ |
+| lg | `.lg` | 992px | `Media Feature` | `Logical Operator` | ✔ |
+| xl | `.xl` | 1200px | `Media Feature` | `Logical Operator` | ✔ |
 
 ### Media Type
 
 | Type | How to Use | Comes after of | Following options | Can set `css` after?  |
 |---|---|---|---|---|
-| all | `.all()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| aural | `.aural()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| braille | `.braille()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| handheld | `.handheld()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| print | `.print()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| projection | `.projection()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| screen | `.screen()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| tty | `.tty()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| tv | `.tv()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
-| embossed | `.embossed()` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| all | `.all` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| aural | `.aural` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| braille | `.braille` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| handheld | `.handheld` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| print | `.print` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| projection | `.projection` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| screen | `.screen` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| tty | `.tty` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| tv | `.tv` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
+| embossed | `.embossed` | `SuperQuery()`, `Logical Operator` | `Logical Operator`, `Media Feature` | ✖ |
 
 ### Media Feature
 
 | Type | How to Use | Optional Argument Example | Comes after of | Following options | Can set `css` after?  |
 |---|---|---|---|---|---|
-| width |`.width()` | `.width('100px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-width | `.minWidth()` | `.minWidth('100px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-width |`.maxWidth()` |`.maxWidth('100px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| height | `.height()` | `.height('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-height | `.minHeight()` | `.minHeight('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-height | `.maxHeight()` | `.maxHeight('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| device-width | `.deviceWidth()` | `.deviceWidth('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-device-width | `.minDeviceWidth()` | `.minDeviceWidth('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-device-width | `.maxDeviceWidth()` | `.maxDeviceWidth('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| device-height | `.height()` | `.height('320px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-device-height | `.minDeviceHeight()` | `.minDeviceHeight('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-device-height | `.maxDeviceHeight()` | `.maxDeviceHeight('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| aspect-ratio | `.aspectRatio()` | `.aspectRatio('1/1')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-aspect-ratio | `.minAspectRatio()` | `.minAspectRatio('1/1')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-aspect-ratio | `.maxAspectRatio()` | `.maxAspectRatio('1/1')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| device-aspect-ratio | `.deviceAspectRatio()` | `.deviceAspectRatio('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-device-aspect-ratio | `.minDeviceAspectRatio()` |  `.minDeviceAspectRatio('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-device-aspect-ratio | `.maxDeviceAspectRatio()` | `.maxDeviceAspectRatio('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| color | `.color()` | `n/a` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-color | `.minColor()` | `.minColor('4')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-color | `.maxColor()` | `.maxColor('4')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| color-index | `.colorIndex()` | `.colorIndex('256')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-color-index | `.minColorIndex()` | `.minColorIndex('256')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-color-index | `.maxColorIndex()` | `.maxColorIndex('256')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| monochrome | `.monochrome()` | `n/a` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-monochrome | `.minMonochrome()` | `.minMonochrome('8')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-monochrome | `.maxMonochrome()` | `.maxMonochrome('8')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| resolution | `.resolution()` | `.resolution('300dpi')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| min-resolution | `.minResolution()` | `.minResolution('300dpi')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| max-resolution | `.maxResolution()` | `.maxResolution('300dpi')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| scan | `.scan()` | `.scan('progressive')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
-| grid | `.grid()` | `n/a` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| width |`.width` | `.width.of('100px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-width | `.minWidth` | `.minWidth.of('100px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-width |`.maxWidth` |`.maxWidth.of('100px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| height | `.height` | `.height.of('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-height | `.minHeight` | `.minHeight.of('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-height | `.maxHeight` | `.maxHeight.of('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| device-width | `.deviceWidth` | `.deviceWidth.of('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-device-width | `.minDeviceWidth` | `.minDeviceWidth.of('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-device-width | `.maxDeviceWidth` | `.maxDeviceWidth.of('960px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| device-height | `.height` | `.height.of('320px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-device-height | `.minDeviceHeight` | `.minDeviceHeight.of('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-device-height | `.maxDeviceHeight` | `.maxDeviceHeight.of('340px')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| aspect-ratio | `.aspectRatio` | `.aspectRatio.of('1/1')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-aspect-ratio | `.minAspectRatio` | `.minAspectRatio.of('1/1')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-aspect-ratio | `.maxAspectRatio` | `.maxAspectRatio.of('1/1')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| device-aspect-ratio | `.deviceAspectRatio` | `.deviceAspectRatio.of('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-device-aspect-ratio | `.minDeviceAspectRatio` |  `.minDeviceAspectRatio.of('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-device-aspect-ratio | `.maxDeviceAspectRatio` | `.maxDeviceAspectRatio.of('16/9')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| color | `.color` | `n/a` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-color | `.minColor` | `.minColor.of('4')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-color | `.maxColor` | `.maxColor.of('4')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| color-index | `.colorIndex` | `.colorIndex.of('256')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-color-index | `.minColorIndex` | `.minColorIndex.of('256')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-color-index | `.maxColorIndex` | `.maxColorIndex.of('256')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| monochrome | `.monochrome` | `n/a` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-monochrome | `.minMonochrome` | `.minMonochrome.of('8')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-monochrome | `.maxMonochrome` | `.maxMonochrome.of('8')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| resolution | `.resolution` | `.resolution.of('300dpi')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| min-resolution | `.minResolution` | `.minResolution.of('300dpi')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| max-resolution | `.maxResolution` | `.maxResolution.of('300dpi')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| scan | `.scan` | `.scan.of('progressive')` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
+| grid | `.grid` | `n/a` | `SuperQuery()`, `Logical Operator`, `Media Type` | `Logical Operator`, `Breakpoints` | ✔ |
 
 
 ### Screen Orientation
 
 | Type | How to Use | Comes after of | Following options | Can set `css` after?  |
 |---|---|---|---|---|
-| landscape |`.landscape()` | `Logical Operator` | `Logical Operator` | ✔ |
-| portrait |`.portrait()` | `Logical Operator` | `Logical Operator` | ✔ |
+| landscape |`.landscape` | `Logical Operator` | `Logical Operator` | ✔ |
+| portrait |`.portrait` | `Logical Operator` | `Logical Operator` | ✔ |
 
 
 ### Logical Operator
 
 | Type | How to Use | Comes after of | Following options | Can set `css` after?  |
 |---|---|---|---|---|
-| and |`.and()` |  `Media Feature`, `Screen Orientation`, `Breakpoints` | `Media Type`, `Media Feature`, `Screen Orientation` | ✖ |
-| or |`.or()` | `Media Feature`, `Screen Orientation`, `Breakpoints` | `Media Type`, `Media Feature`, `Screen Orientation` | ✖ |
-| not |`.not()` | `SuperQuery()` | `Media Type` | ✖ |
-| only |`.only()` | `SuperQuery()` | `Media Type` | ✖ |
+| and |`.and` |  `Media Feature`, `Screen Orientation`, `Breakpoints` | `Media Type`, `Media Feature`, `Screen Orientation` | ✖ |
+| or |`.or` | `Media Feature`, `Screen Orientation`, `Breakpoints` | `Media Type`, `Media Feature`, `Screen Orientation` | ✖ |
+| not |`.not` | `SuperQuery()` | `Media Type` | ✖ |
+| only |`.only` | `SuperQuery()` | `Media Type` | ✖ |
 
 ### Render CSS
 
@@ -254,7 +291,7 @@ const List = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  SuperQuery().minWidth().md().css`
+  SuperQuery().minWidth.md.css`
     color: white;
     font-size: 14px;
     text-decoration: none;
@@ -287,7 +324,7 @@ const customBreakpoints = {
 const Title = styled.h1`
   color: #666;
   font-size: 16px;
-  ${SuperQuery(customBreakpoints).minWidth().superExtraLarge().css`
+  ${SuperQuery(customBreakpoints).minWidth.superExtraLarge.css`
     font-size: 20px;
   `};
 `;
@@ -296,7 +333,7 @@ const Title = styled.h1`
 const Title = styled.h1`
   color: #666;
   font-size: 16px;
-  ${props => SuperQuery(props.theme.breakpoints).minWidth().superExtraLarge().css`
+  ${props => SuperQuery(props.theme.breakpoints).minWidth.superExtraLarge.css`
     font-size: 20px;
   `};
 `;
@@ -305,9 +342,9 @@ const Title = styled.h1`
 
 <br />
 
-### NEW: `Orientation`
+### `Orientation`
 
-We have added in the `version 1.0.0` a new feature: `Orientation`, which is a `Screen Orientation manager`.
+We have added since the `version 1.0.0` a new feature: `Orientation`, which is a `Screen Orientation manager`.
 
 This feature is an implementation of the Web API `Screen.orientation` available in the modern browser.
 
@@ -328,7 +365,7 @@ import Orientation from '@themgoncalves/super-query/orientation';
 
 ```javascript
 Orientation.onChange((orientation) => {
-    console.inf('Screen orientation has changed to: ', orientation);
+    console.info('Screen orientation has changed to: ', orientation);
 });
 ```
 
@@ -373,6 +410,15 @@ console.info('Was screen orientation locked before? ', wasScreenOrientationLocke
 <br />
 
 ## Release History
+* 3.0.0
+    * `SuperQuery` was rebuilt in order to improve its syntax and readability.
+    * REMOVED: `configureBreakpoints()` to set custom breakpoints, use `SuperQuery(myCustombreakpoints)` instead
+    * NEW: **No more `parentheses`**! Now `SuperQuery` has a fluid and human likely style.
+      * Before: `SuperQuery().all().and().maxWidth().md().css...`
+      * Now: `SuperQuery().all.and.maxWidth.md.css...`
+    * NEW: `.of(value)` method is introduced for all the cases you need to declare a value.
+      * E.g. `SperQuery().minWidth.of('300px').css...`
+    * `Server Side Render` tested.
 * 2.0.0
     * NEW: Option to override  `bult-in breakpoints` directly from `SuperQuery(myCustombreakpoints)`
     * DEPRECATED: `configureBreakpoints()` to set custom breakpoints, use `SuperQuery(myCustombreakpoints)` instead

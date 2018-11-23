@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     app:
       [
-        'babel-polyfill',
+        '@babel/polyfill',
         './example/index.jsx',
       ],
   },
@@ -21,7 +21,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@themgoncalves/super-query': path.resolve(__dirname, '../../source'),
+      '@themgoncalves/super-query': path.resolve(__dirname, '../../src'),
     },
   },
   module: {

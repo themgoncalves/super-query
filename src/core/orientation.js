@@ -1,8 +1,10 @@
 /**
  * SuperQuery
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.0.0
+ * @version 3.0.0
  */
+import isServer from '../utils/isServer';
+import windowMock from '../utils/windowMock';
 
 /**
  * @function Orientantion
@@ -18,11 +20,11 @@
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Screen/orientation}
  * @returns {Object}
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.0.0
+ * @version 3.0.0
  * @license MIT
  */
 const Orientantion = () => {
-  const { screen } = window;
+  const { screen } = isServer ? windowMock : window;
   const defaultOrientation = 'portrait-primary';
   let isOrientationLocked = false;
 
@@ -35,10 +37,10 @@ const Orientantion = () => {
    * console.info(currentOrientation);
    */
   const current = () => {
-    const orientation = screen.msOrientation ||
-      (screen.orientation || screen.mozOrientation || {}).type;
+    const orientation = screen.msOrientation
+      || (screen.orientation || screen.mozOrientation || {}).type;
 
-    return (orientation ? orientation : defaultOrientation);
+    return (orientation || defaultOrientation);
   };
 
   /**
@@ -79,10 +81,10 @@ const Orientantion = () => {
    * console.info(screenWasLocked);
    */
   const lock = (...orientation) => {
-    const universalLock = screen.lockOrientation ||
-      screen.mozLockOrientation ||
-      screen.msLockOrientation ||
-      function spOorientation() { return false; };
+    const universalLock = screen.lockOrientation
+      || screen.mozLockOrientation
+      || screen.msLockOrientation
+      || function spOorientation() { return false; };
 
     isOrientationLocked = universalLock(...orientation);
     return isOrientationLocked;
@@ -97,11 +99,11 @@ const Orientantion = () => {
    * console.info(screenWasUnlocked);
    */
   const unlock = () => {
-    const universalUnlock = screen.unlockOrientation ||
-      screen.mozUnlockOrientation ||
-      screen.msUnlockOrientation ||
-      (screen.orientation && screen.orientation.unlock) ||
-      function spOorientation() { return false; };
+    const universalUnlock = screen.unlockOrientation
+      || screen.mozUnlockOrientation
+      || screen.msUnlockOrientation
+      || (screen.orientation && screen.orientation.unlock)
+      || function orientation() { return false; };
 
     isOrientationLocked = universalUnlock();
     return isOrientationLocked;

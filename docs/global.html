@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="module-Breakpoints.html">Breakpoints</a></li><li><a href="module-Orientantion.html">Orientantion</a></li><li><a href="module-SuperQuery.html">SuperQuery</a></li>
+					<li><a href="module-Orientantion.html">Orientantion</a></li><li><a href="module-SuperQuery.html">SuperQuery</a></li>
 				</ul>
 			</li>
 			
@@ -232,6 +232,88 @@ to be further converted to <code>em</code> unit.</p>
         
             
 <hr>
+<dt class="name" id="defaultBreakpoints">
+    <h4 id="defaultBreakpoints"><span class="type-signature">&lt;constant> </span>defaultBreakpoints<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Removed from the great work of <code>Bootstrap 4</code>.
+All values are defined in pixels (without the suffix <code>px</code>),
+to be further converted to <code>em</code> unit.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://getbootstrap.com/docs/4.0/layout/grid/">https://getbootstrap.com/docs/4.0/layout/grid/</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+{
+ xs: 0
+ sm: 576
+ md: 768
+ lg: 992
+ xl: 1200
+}</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
 <dt class="name" id="initialLogicalOperator">
     <h4 id="initialLogicalOperator"><span class="type-signature">&lt;constant> </span>initialLogicalOperator<span class="type-signature"></span></h4>
 
@@ -293,6 +375,145 @@ media_query: [[only | not]? &lt;media_type&gt; [ and <expression> ]*]</p>
     <pre class="sunlight-highlight-javascript">
 not
 only</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="initialLogicalOperator">
+    <h4 id="initialLogicalOperator"><span class="type-signature">&lt;constant> </span>initialLogicalOperator<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Used in the first condition of the &lt;media_query&gt;
+media_query: [[only | not]? &lt;media_type&gt; [ and <expression> ]*]</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+not
+only</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="logicalOperator">
+    <h4 id="logicalOperator"><span class="type-signature">&lt;constant> </span>logicalOperator<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Used to join <expression> in the &lt;media_query&gt;
+expression: ( &lt;media_feature&gt; [: <value>]? )
+media_query: <expression> [ and <expression> ]*</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+and
+or</pre>
 
 
     
@@ -449,6 +670,152 @@ resolution | min-resolution | max-resolution
         
             
 <hr>
+<dt class="name" id="mediaFeature">
+    <h4 id="mediaFeature"><span class="type-signature">&lt;constant> </span>mediaFeature<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Used to set <Expression> syntax
+expression: ( &lt;media_feature&gt; [: <value>]? )</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+width | min-width | max-width
+height | min-height | max-height
+device-width | min-device-width | max-device-width
+device-height | min-device-height | max-device-height
+aspect-ratio | min-aspect-ratio | max-aspect-ratio
+device-aspect-ratio | min-device-aspect-ratio | max-device-aspect-ratio
+color | min-color | max-color
+color-index | min-color-index | max-color-index
+monochrome | min-monochrome | max-monochrome
+resolution | min-resolution | max-resolution
+| scan | grid</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="mediaTypes">
+    <h4 id="mediaTypes"><span class="type-signature">&lt;constant> </span>mediaTypes<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Target all, one or more specific device</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">
+all | aural | braille | handheld | print |
+projection | screen | tty | tv | embossed</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
 <dt class="name" id="mediaTypes">
     <h4 id="mediaTypes"><span class="type-signature">&lt;constant> </span>mediaTypes<span class="type-signature"></span></h4>
 
@@ -580,6 +947,72 @@ projection | screen | tty | tv | embossed</pre>
     
 </dd>
 
+        
+            
+<hr>
+<dt class="name" id="screenOrientation">
+    <h4 id="screenOrientation"><span class="type-signature">&lt;constant> </span>screenOrientation<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Required to track orientation change on mobile devices</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript"> landscape, portrait</pre>
+
+
+    
+</dd>
+
         </dl>
     
 
@@ -634,7 +1067,7 @@ projection | screen | tty | tv | embossed</pre>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-10-28T13:20:24+01:00
+		on 2018-11-23T14:30:43+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

@@ -3,7 +3,7 @@
       "allowUnknownTags": false
   },
   "source": {
-      "include": "../source",
+      "include": "./src",
       "includePattern": ".js$",
       "excludePattern": "(node_modules/|docs)"
   },
@@ -26,6 +26,6 @@
     "linenums"              : "true",
     "inverseNav"            : "true",
     "syntaxTheme"           : "default",
-    "search"                : "true" 
+    "search"                : "true"
   }
 }
