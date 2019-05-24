@@ -1,14 +1,12 @@
 # 🎠 Super-Query
 > A super `media-query` for styled-component. Intuitive and easy of use.
 
+[![NPM][npm-image]][npm-url]
 [![Build Status][travis-ci-image]][travis-ci-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![GitHub All Releases][releases-image]][releases-url]
 [![GitHub stars][stars-image]][stars-url]
 [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
-[![GitHub issues][issues-image]][issues-url]
-[![NPM][npm-image]][npm-url]
-[![Awesome][awesome-image]][awesome-url]
 
 ## Description
 
@@ -460,17 +458,10 @@ Distributed under the MIT license. [Click here](/LICENSE) for more information.
 
 [vulnerabilities-image]: https://snyk.io/test/github/themgoncalves/super-query/badge.svg
 [vulnerabilities-url]: https://snyk.io/test/github/themgoncalves/super-query
-[issues-image]: https://img.shields.io/github/issues/themgoncalves/super-query.svg
-[issues-url]: https://github.com/themgoncalves/super-query/issues
 [stars-image]: https://img.shields.io/github/stars/themgoncalves/super-query.svg
 [stars-url]: https://github.com/themgoncalves/super-query/stargazers
-[forks-image]: https://img.shields.io/github/forks/themgoncalves/super-query.svg
-[forks-url]: https://github.com/themgoncalves/super-query/network
-[awesome-image]: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
 [releases-image]: https://img.shields.io/github/downloads/atom/atom/total.svg
 [releases-url]: https://github.com/themgoncalves/react-redux-async-starter-kit
-[awesome-url]: https://github.com/themgoncalves/super-query
-[wiki]: https://github.com/yourname/yourproject/wiki
 [travis-ci-image]: https://travis-ci.org/themgoncalves/super-query.svg?branch=master
 [travis-ci-url]: https://travis-ci.org/themgoncalves/super-query
 [coveralls-image]: https://coveralls.io/repos/github/themgoncalves/super-query/badge.svg?branch=master
